@@ -1,9 +1,3 @@
-.pageBox {
-    display: flex;
-    flex-direction: column;
-    gap: 40rem;
-}
-
 .categoriesBox {
     width: 100%;
     display: flex;

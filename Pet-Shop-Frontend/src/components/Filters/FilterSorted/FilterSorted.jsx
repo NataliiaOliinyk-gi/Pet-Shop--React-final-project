@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import CustomSelect from '../CustomSelect/CustomSelect';
+import CustomSelect from './CustomSelect/CustomSelect';
 
 // import styles from './FilterSorted.module.css';
 import shared from '../../../styles/modules/sharedFilters.module.css';

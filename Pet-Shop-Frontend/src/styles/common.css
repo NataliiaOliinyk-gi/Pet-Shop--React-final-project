@@ -6,6 +6,11 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
 /* .screen-wrapper {
     max-width: 1360rem;
     margin: 0 auto;

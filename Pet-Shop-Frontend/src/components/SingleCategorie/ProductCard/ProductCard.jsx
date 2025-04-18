@@ -1,5 +1,5 @@
 
-import { localUrl } from '../../api/data';
+import { localUrl } from '../../../api/data';
 
 import styles from './ProductCard.module.css';
 
@@ -7,8 +7,9 @@ const ProductCard = ({ item }) => {
     return (
         <div className={styles.card}>
             <div className={styles.imageBox}>
-                <img src={`${localUrl}${item.image}`} alt={item.title} className={styles.image} />
+                <img src={`${localUrl}${item.image}`} alt={item.title} className={`img-fluid ${styles.image}`} />
             </div>
+
             <div className={styles.boxContent}>
                 <p className={styles.title}>{item.title}</p>
                 <div className={styles.description}>

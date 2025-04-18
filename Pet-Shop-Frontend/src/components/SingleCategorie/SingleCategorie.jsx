@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 import Filters from '../Filters/Filters';
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from './ProductCard/ProductCard';
 
 import { getCategorieById } from '../../api/data';
 
@@ -48,17 +48,15 @@ const SingleCategorie = () => {
             title={categorie}
             path={[
                 { name: "Categories", to: "/categories/all" },
-                { name: categorie, to: `/categories/${id}` }
-            ]}>
-            <div className={styles.pageBox}>
-                <Filters />
-                {loading && <p className={styles.loading}>Loading...</p>}
-                {error && <p className={styles.error}>{error}</p>}
-                <div className={styles.categoriesBox}>
-                    {elements}
-                </div>
+                { name: categorie, to: `/categories/${id}` }]}
+        >
+            <Filters />
+            {loading && <p className={styles.loading}>Loading...</p>}
+            {error && <p className={styles.error}>{error}</p>}
+            <div className={styles.categoriesBox}>
+                {elements}
             </div>
-            
+
         </SectionLayout>
 
     );
