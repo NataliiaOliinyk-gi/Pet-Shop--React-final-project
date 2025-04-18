@@ -1,0 +1,19 @@
+.filtersBox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.filtersLabel {
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 130%;
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 420px) {
+
+    .filtersBox {
+        gap: 12rem;
+    }
+}

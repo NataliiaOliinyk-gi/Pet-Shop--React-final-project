@@ -1,0 +1,190 @@
+.wrapper {
+    max-width: 1440rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    margin-top: 80rem;
+    padding: 0 40rem 80rem 40rem;
+}
+
+.map {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    max-width: 1360rem;
+    border: none;
+}
+
+.contactsContainer {
+    margin-top: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 32rem;
+}
+
+.box {
+    max-width: 1360rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32rem;
+}
+
+.contactsBox {
+    border-radius: 12px;
+    padding: 32rem;
+    background-color: var(--hover-color);
+    box-sizing: border-box;
+}
+
+.contactsBox:nth-child(2n+1) {
+    width: 58%;
+}
+
+.contactsBox:nth-child(2n) {
+    width: 39%;
+}
+
+.title {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--opacity-color);
+    margin-bottom: 16rem;
+}
+
+.description {
+    font-size: 40rem;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--main-color);
+}
+
+.socialIcons {
+    display: flex;
+    gap: 16rem;
+}
+
+.iconImg {
+    width: 44rem;
+    height: 44rem;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1150px) {
+
+    .contactsBox:nth-child(2n) {
+        width: 38%;
+    }
+
+    .description {
+        font-size: 38rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .contactsBox {
+        padding: 30rem;
+    }
+
+    .contactsBox:nth-child(2n) {
+        width: 37%;
+    }
+
+    .description {
+        font-size: 32rem;
+    }
+
+    .title {
+        font-size: 18rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        margin-top: 60rem;
+        padding: 0 30rem 60rem 30rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .contactsBox {
+        padding: 28rem;
+    }
+
+    .description {
+        font-size: 28rem;
+    }
+
+    .title {
+        font-size: 16rem;
+        margin-bottom: 15rem;
+    }
+
+    .socialIcons {
+        gap: 10rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .contactsBox {
+        padding: 26rem;
+    }
+
+    .contactsBox:nth-child(2n) {
+        width: 36%;
+    }
+
+    .description {
+        font-size: 24rem;
+    }
+
+    .title {
+        font-size: 15rem;
+    }
+
+    .iconImg {
+        width: 40rem;
+        height: 40rem;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    .contactsBox:nth-child(2n+1) {
+        width: 57%;
+    }
+
+    .description {
+        font-size: 20rem;
+    }
+
+    .title {
+        font-size: 14rem;
+        margin-bottom: 10rem;
+    }
+
+    .iconImg {
+        width: 36rem;
+        height: 36rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .container {
+        margin-top: 40rem;
+        padding: 0 20rem 40rem 20rem;
+    }
+
+    .iconImg {
+        width: 30rem;
+        height: 30rem;
+    }
+}

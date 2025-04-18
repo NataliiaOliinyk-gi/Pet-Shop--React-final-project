@@ -1,0 +1,120 @@
+.card {
+    position: relative;
+    width: 316px;
+    height: 422px;
+    border: 1px solid var(--light-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20rem;
+}
+
+.imageBox {
+    width: 100%;
+    height: 284px;
+    border-bottom: 1px solid var(--light-color);
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.boxContent {
+    padding: 0px 32rem 32rem 32rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+}
+
+.title {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    color: var(--main-color);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* .title:hover {
+    color: var(--second-color);
+} */
+
+.description {
+    display: flex;
+    align-items: flex-end;
+    gap: 16rem;
+}
+
+.price {
+    font-size: 40rem;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--main-color);
+}
+
+.discont {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--opacity-color);
+}
+
+.discountBadge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    background-color: var(--second-color);
+    border-radius: 6px;
+    padding: 4px 8px;
+    width: 63px;
+    height: 34px;
+
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+}
+
+.addToCartBtn {
+    position: absolute;
+    top: 210px;
+    left: 16px;
+
+    width: 284px;
+    height: 58px;
+    background-color: var(--second-color);
+    border-radius: 6px;
+    padding: 16px 32px;
+    border: none;
+
+    color: var(--white-color);
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* при наведенні на картку — показуємо кнопку */
+.card:hover .addToCartBtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.addToCartBtn:hover {
+    background-color: var(--main-color);
+}

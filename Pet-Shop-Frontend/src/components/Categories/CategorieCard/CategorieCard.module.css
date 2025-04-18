@@ -1,0 +1,29 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16rem;
+}
+
+.imageBox {
+    border-radius: 12px;
+    width: 316px;
+    height: 350px;
+}
+
+.image {
+    width: 100%;
+}
+
+.title {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.title:hover {
+    color: var(--second-color);
+}
+

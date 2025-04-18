@@ -1,0 +1,20 @@
+.baket {
+    width: 48rem;
+    height: 48rem;
+}
+
+@media screen and (max-width: 520px) {
+
+    .baket {
+        width: 31px;
+        height: 31px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .baket {
+        width: 28px;
+        height: 28px;
+    }
+}

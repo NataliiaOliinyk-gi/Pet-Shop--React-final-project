@@ -1,0 +1,28 @@
+.filtersContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    /* margin-top: 40rem; */
+}
+
+@media screen and (max-width: 986px) {
+
+    .filtersContainer {
+        gap: 36rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .filtersContainer {
+        gap: 24rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .filtersContainer {
+        gap: 20rem;
+    }
+}

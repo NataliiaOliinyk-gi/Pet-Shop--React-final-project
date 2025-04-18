@@ -1,0 +1,99 @@
+.wrapper {
+    padding-top: 40rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32rem;
+}
+
+.boxImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16rem;
+}
+
+.boxDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16rem;
+}
+
+.boxBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    color: var(--opacity-color);
+}
+
+.img4 {
+    width: 180rem;
+    height: 246rem;
+}
+
+.imgPets {
+    width: 300rem;
+    height: 270rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    .img4 {
+        width: 130rem;
+        height: auto;
+    }
+
+    .imgPets {
+        width: 210rem;
+        height: auto;
+    }
+
+    .boxImage {
+        gap: 14rem;
+    }
+
+    .boxDescription {
+        gap: 14rem;
+    }
+
+    .text {
+        font-size: 18rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .img4 {
+        width: 120rem;
+        height: auto;
+    }
+
+    .imgPets {
+        width: 200rem;
+        height: auto;
+    }
+
+    .boxImage {
+        gap: 10rem;
+    }
+
+    .boxDescription {
+        gap: 10rem;
+    }
+
+    .text {
+        font-size: 14rem;
+    }
+}

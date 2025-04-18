@@ -1,0 +1,68 @@
+.selectWrapper {
+    position: relative;
+    width: 200px;
+}
+
+.selectButton {
+    width: 100%;
+    height: 36px;
+    padding: 8px 8px 8px 16px;
+    border: 1px solid var(--light-color);
+    border-radius: 6px;
+    background-color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 16rem;
+    font-weight: 500;
+    line-height: 126%;
+    color: var(--main-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    height: 124px;
+    background-color: var(--white-color);
+    border-radius: 6px;
+    padding: 16rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+}
+
+.option {
+    color: var(--opacity-color);
+    cursor: pointer;
+}
+
+.option:hover {
+    color: var(--second-color);
+}
+
+.selected {
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 768px) {
+
+    .dropdown {
+        height: 124rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .selectButton {
+        gap: 12rem;
+    }
+}
