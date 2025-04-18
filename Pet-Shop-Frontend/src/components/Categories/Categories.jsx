@@ -31,12 +31,6 @@ const Categories = () => {
         fetchCategories();
     }, []);
 
-    // const elements = categories.map(item => (
-    //     <Link to={`/categories/${item.id}`} key={item.id} className={styles.link}>
-    //         <CategorieCard item={item} />
-    //     </Link>
-    // ))
-
     const elements = categories.map(item => {
         const slug = slugify(item.title);
         return (

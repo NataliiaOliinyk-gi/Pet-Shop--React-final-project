@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 import Filters from '../Filters/Filters';
@@ -17,6 +17,7 @@ const SingleCategorie = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -29,7 +30,7 @@ const SingleCategorie = () => {
                     item => slugify(item.title) === id.toLowerCase()
                 );
                 if (!categoryItem) {
-                    setError("Category not found");
+                    navigate('/not-found');
                     return;
                 }
     
@@ -46,20 +47,7 @@ const SingleCategorie = () => {
     
         fetchData();
 
-        // const fetchCategorie = async () => {
-        //     try {
-        //         setLoading(true);
-        //         const data = await getCategorieById(id);
-        //         setCategorie(data.category.title);
-        //         setProductsCategory(data.data);
-        //     } catch (error) {
-        //         setError(error.message);
-        //     } finally {
-        //         setLoading(false);
-        //     }
-        // };
-        // fetchCategorie();
-    }, [id]);
+    }, [id, navigate]);
 
 
     const elements = productsCategory.map(item => (
