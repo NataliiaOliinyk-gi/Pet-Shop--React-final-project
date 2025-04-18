@@ -5,7 +5,8 @@ import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 import Filters from '../Filters/Filters';
 import ProductCard from './ProductCard/ProductCard';
 
-import { getCategorieById } from '../../api/data';
+import { getCategorieById, getCategoriesAll } from '../../api/data';
+import { slugify } from '../../utils/slugify';
 
 import styles from './SingleCategorie.module.css';
 
@@ -18,19 +19,46 @@ const SingleCategorie = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const fetchCategorie = async () => {
+
+        const fetchData = async () => {
             try {
                 setLoading(true);
-                const data = await getCategorieById(id);
-                setCategorie(data.category.title);
-                setProductsCategory(data.data);
+
+                const allCategories = await getCategoriesAll();
+                const categoryItem = allCategories.find(
+                    item => slugify(item.title) === id.toLowerCase()
+                );
+                if (!categoryItem) {
+                    setError("Category not found");
+                    return;
+                }
+    
+                // Отримуємо товари для цієї категорії по id
+                const categoryData = await getCategorieById(categoryItem.id);
+                setCategorie(categoryData.category.title);
+                setProductsCategory(categoryData.data);
             } catch (error) {
                 setError(error.message);
             } finally {
                 setLoading(false);
             }
         };
-        fetchCategorie();
+    
+        fetchData();
+
+        // const fetchCategorie = async () => {
+        //     try {
+        //         setLoading(true);
+        //         const data = await getCategorieById(id);
+        //         setCategorie(data.category.title);
+        //         setProductsCategory(data.data);
+        //     } catch (error) {
+        //         setError(error.message);
+        //     } finally {
+        //         setLoading(false);
+        //     }
+        // };
+        // fetchCategorie();
     }, [id]);
 
 
