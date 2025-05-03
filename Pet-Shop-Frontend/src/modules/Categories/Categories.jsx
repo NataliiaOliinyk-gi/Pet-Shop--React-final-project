@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
+
 import CategorieCard from './CategorieCard/CategorieCard';
 
 import { getCategoriesAll } from '../../api/data';

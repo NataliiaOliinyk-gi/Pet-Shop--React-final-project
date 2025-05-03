@@ -6,15 +6,12 @@ import styles from './SectionLayout.module.css';
 
 const SectionLayout = ({ children, title, path }) => {
     return (
-        <section>
-            <div className={styles.wrapper}>
-                <div className={styles.container}>
-                    {path && <Breadcrumbs path={path} />}
-                    {title && <Title text={title} />}
-                    {children}
-                </div>
+        <section className={styles.wrapper}>
+            <div className={styles.container}>
+                {path && <Breadcrumbs path={path} />}
+                {title && <Title text={title} />}
+                {children}
             </div>
-
         </section>
     )
 };

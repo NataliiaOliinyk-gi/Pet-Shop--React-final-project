@@ -1,4 +1,6 @@
 
+import Wrapper from '../Wrapper/Wrapper';
+
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import MainMenu from './MainMenu/MainMenu';
 import HeaderCart from './HeaderCart/HeaderCart';
@@ -9,11 +11,13 @@ const Header = () => {
 
     return (
         <header>
-            <nav className={styles.nav}>
-                <HeaderLogo />
-                <MainMenu />
-                <HeaderCart />
-            </nav>
+            <Wrapper>
+                <nav className={styles.nav}>
+                    <HeaderLogo />
+                    <MainMenu />
+                    <HeaderCart />
+                </nav>
+            </Wrapper>
         </header>
     )
 };

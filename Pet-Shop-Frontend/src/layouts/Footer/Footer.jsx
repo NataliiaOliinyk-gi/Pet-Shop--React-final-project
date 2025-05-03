@@ -13,15 +13,15 @@ const Footer = () => {
             {item.icons ? (
                 <div className={styles.socialIcons}>
                     {item.icons.map((icon, index) => (
-                        <a 
-                        key={index} 
-                        href={icon.href} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className={styles.iconLink}
-                    >
-                        <img src={icon.icon} alt="social icon" className={styles.iconImg} />
-                    </a>
+                        <a
+                            key={index}
+                            href={icon.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.iconLink}
+                        >
+                            <img src={icon.icon} alt="social icon" className={styles.iconImg} />
+                        </a>
                     ))}
                 </div>
             ) : (
