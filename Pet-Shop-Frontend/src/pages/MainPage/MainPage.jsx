@@ -1,5 +1,5 @@
 
-import Main from "../../components/Main/Main";
+import Main from "../../modules/Main/Main";
 
 import styles from './MainPage.module.css';
 

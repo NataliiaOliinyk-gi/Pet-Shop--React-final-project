@@ -1,5 +1,5 @@
 
-import SingleCategorie from '../../components/SingleCategorie/SingleCategorie';
+import SingleCategorie from '../../modules/SingleCategorie/SingleCategorie';
 
 // import styles from './SingleCategoriePage.module.css';
 

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Filters from '../Filters/Filters';
-import ProductCard from './ProductCard/ProductCard';
+import Filters from '../../components/Filters/Filters';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 import { getCategorieById, getCategoriesAll } from '../../api/data';
 import { slugify } from '../../utils/slugify';
@@ -63,7 +63,7 @@ const SingleCategorie = () => {
         <SectionLayout
             title={categorie}
             path={[
-                { name: "Categories", to: "/categories/all" },
+                { name: "Categories", to: "/categories" },
                 { name: categorie, to: `/categories/${id}` }]}
         >
             <Filters />

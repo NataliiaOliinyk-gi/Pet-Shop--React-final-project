@@ -8,7 +8,7 @@ const productsInstance = axios.create({
     baseURL: "http://localhost:3333/products"
 });
 
-const orderInstance = axios.create({
+const postInstance = axios.create({
     baseURL: "http://localhost:3333/order"
 });
 
@@ -33,8 +33,13 @@ export const getProductById = async id => {
 };
 
 export const orderSend = async newOrder => {
-    const { data } = await orderInstance.post("/send", newOrder);
+    const { data } = await postInstance.post("/order/send", newOrder);
     return data
-}
+};
+
+export const saleSend = async saleData => {
+    const { data } = await postInstance.post("/sale/send", saleData);
+    return data
+};
 
 export const localUrl = "http://localhost:3333";

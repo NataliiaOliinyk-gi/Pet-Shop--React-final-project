@@ -1,5 +1,5 @@
 
-import SingleProduct from '../../components/SingleProduct/SingleProduct';
+import SingleProduct from '../../modules/SingleProduct/SingleProduct';
 
 import styles from './ProductPage.module.css';
 

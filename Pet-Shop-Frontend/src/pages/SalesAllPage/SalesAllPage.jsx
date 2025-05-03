@@ -1,6 +1,6 @@
 
 import Breadcrumbs from '../../layouts/Breadcrumbs/Breadcrumbs';
-import Sales from '../../components/Sales/Sales';
+import Sales from '../../modules/Sales/Sales';
 
 import styles from './SalesAllPage.module.css';
 

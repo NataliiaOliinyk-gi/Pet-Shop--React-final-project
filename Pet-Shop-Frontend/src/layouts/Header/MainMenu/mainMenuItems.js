@@ -8,17 +8,17 @@ const mainMenuItems = [
     },
     {
         id: nanoid(),
-        href: "/categories/all",
+        href: "/categories",
         text: "Categories"
     },
     {
         id: nanoid(),
-        href: "/products/all",
+        href: "/products",
         text: "All products"
     },
     {
         id: nanoid(),
-        href: "/sales/all",
+        href: "/sales",
         text: "All sales"
     },
 ];

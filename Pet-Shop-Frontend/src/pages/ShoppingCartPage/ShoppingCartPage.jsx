@@ -1,5 +1,5 @@
 
-import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
+import ShoppingCart from '../../modules/ShoppingCart/ShoppingCart';
 
 import styles from './ShoppingCartPage.module.css';
 

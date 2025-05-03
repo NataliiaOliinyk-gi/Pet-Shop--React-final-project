@@ -1,7 +1,7 @@
 
 import Header from '../../layouts/Header/Header';
 import Footer from '../../layouts/Footer/Footer';
-import Navigations from '../../Navigations';
+import Navigations from '../../pages/Navigations';
 
 
 import '../../styles/style.css';

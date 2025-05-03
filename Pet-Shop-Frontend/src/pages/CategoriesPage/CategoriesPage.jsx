@@ -1,5 +1,5 @@
 // import Breadcrumbs from '../../layouts/Breadcrumbs/Breadcrumbs';
-import Categories from '../../components/Categories/Categories';
+import Categories from '../../modules/Categories/Categories';
 
 // import styles from './CategoriesPage.module.css';
 
