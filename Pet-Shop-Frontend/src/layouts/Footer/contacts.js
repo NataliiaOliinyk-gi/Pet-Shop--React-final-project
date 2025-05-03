@@ -7,8 +7,8 @@ const contacts = [
     {
         title: 'Socials',
         icons: [
-            { href: 'https://instagram.com', icon: '../../src/assets/icons/ic-instagram.svg' },
-            { href: 'https://whatsapp.com', icon: '../../src/assets/icons/ic-whatsapp.svg' },
+            { href: 'https://instagram.com', icon: '../../src/assets/icons/social_networks/ic-instagram.svg' },
+            { href: 'https://whatsapp.com', icon: '../../src/assets/icons/social_networks/ic-whatsapp.svg' },
         ],
     },
 

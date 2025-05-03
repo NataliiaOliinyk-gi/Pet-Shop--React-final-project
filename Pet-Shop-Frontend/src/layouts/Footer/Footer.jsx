@@ -39,7 +39,7 @@ const Footer = () => {
                         {elements}
                     </div>
                     <div>
-                        <img className={styles.map} src="../../src/assets/img/map.png" alt="Map" />
+                        <img className={styles.map} src="../../src/assets/images/map.png" alt="Map" />
                     </div>
                 </div>
             </div>

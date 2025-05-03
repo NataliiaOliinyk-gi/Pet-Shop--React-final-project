@@ -22,7 +22,7 @@ const NotFound = () => {
                 <div className={styles.container}>
                     <div className={styles.boxImage}>
                         <img className={styles.img4} src="../../src/assets/svg/4.svg" alt="4" />
-                        <img className={styles.imgPets} src="../../src/assets/img/pets.png" alt="Pets" />
+                        <img className={styles.imgPets} src="../../src/assets/images/pets.png" alt="Pets" />
                         <img className={styles.img4} src="../../src/assets/svg/4.svg" alt="4" />
                     </div>
                     <div className={styles.boxDescription}>
