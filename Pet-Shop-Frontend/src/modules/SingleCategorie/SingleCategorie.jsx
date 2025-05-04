@@ -5,7 +5,7 @@ import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 import Filters from '../../components/Filters/Filters';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
-import { getCategorieById, getCategoriesAll } from '../../api/data';
+import { getCategorieById, getCategoriesAll } from '../../api/categories-api';
 import { slugify } from '../../utils/slugify';
 
 import styles from './SingleCategorie.module.css';
@@ -16,7 +16,7 @@ const SingleCategorie = () => {
     const [productsCategory, setProductsCategory] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const { id } = useParams();
+    const { id: slug } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,9 +25,12 @@ const SingleCategorie = () => {
             try {
                 setLoading(true);
 
-                const allCategories = await getCategoriesAll();
+                const { data: allCategories, error: errorCategories } = await getCategoriesAll();
+                if (errorCategories) {
+                    return setError(errorCategories.message);
+                }
                 const categoryItem = allCategories.find(
-                    item => slugify(item.title) === id.toLowerCase()
+                    item => slugify(item.title) === slug.toLowerCase()
                 );
                 if (!categoryItem) {
                     navigate('/not-found');
@@ -35,7 +38,10 @@ const SingleCategorie = () => {
                 }
 
                 // Отримуємо товари для цієї категорії по id
-                const categoryData = await getCategorieById(categoryItem.id);
+                const { data: categoryData, error: errorProducts } = await getCategorieById(categoryItem.id);
+                if (errorProducts) {
+                    return setError(errorProducts.message);
+                }
                 setCategorie(categoryData.category.title);
                 setProductsCategory(categoryData.data);
             } catch (error) {
@@ -47,7 +53,7 @@ const SingleCategorie = () => {
 
         fetchData();
 
-    }, [id, navigate]);
+    }, [slug, navigate]);
 
 
     const elements = productsCategory.map(item => (
@@ -62,8 +68,10 @@ const SingleCategorie = () => {
 
         <SectionLayout title={categorie} showBreadcrumbs>
             <Filters />
-            {loading && <p className={styles.loading}>Loading...</p>}
-            {error && <p className={styles.error}>{error}</p>}
+            {loading &&
+                <p className={styles.loading}>Loading...</p>}
+            {error &&
+                <p className={styles.error}>{error}</p>}
             <div className={styles.categoriesBox}>
                 {elements}
             </div>

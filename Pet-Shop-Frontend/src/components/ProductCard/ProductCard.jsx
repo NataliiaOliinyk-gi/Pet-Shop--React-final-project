@@ -1,5 +1,5 @@
 
-import { localUrl } from '../../api/data';
+import { localUrl } from '../../api/backendInstance';
 
 import styles from './ProductCard.module.css';
 

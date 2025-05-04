@@ -5,8 +5,6 @@ import styles from './MainModuleCard.module.css';
 
 const MainModuleCard = () => {
 
-    // const text = "Categories";
-    // const item = { name: 'All categories', to: '/categories' };
 
     return (
         <div>

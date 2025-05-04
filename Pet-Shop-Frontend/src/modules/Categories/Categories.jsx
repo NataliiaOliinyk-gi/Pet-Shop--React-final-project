@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 
 import CategorieCard from './CategorieCard/CategorieCard';
 
-import { getCategoriesAll } from '../../api/data';
+import useFetch from '../../hooks/useFetch';
+
+import { getCategoriesAll } from '../../api/categories-api';
 import { slugify } from '../../utils/slugify';
 
 import styles from './Categories.module.css';
@@ -13,24 +14,10 @@ import styles from './Categories.module.css';
 
 const Categories = () => {
 
-    const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                setLoading(true);
-                const data = await getCategoriesAll();
-                setCategories(data);
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchCategories();
-    }, []);
+    const { data: categories, loading, error } = useFetch({
+        request: getCategoriesAll,
+        initialData: [],
+    });
 
     const elements = categories.map(item => {
         const slug = slugify(item.title);
