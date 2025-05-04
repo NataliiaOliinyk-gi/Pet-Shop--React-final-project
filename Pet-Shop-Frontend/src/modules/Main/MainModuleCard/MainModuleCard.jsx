@@ -1,10 +1,21 @@
 
+import ModuleTitle from '../../ModuleTitle/ModuleTitle';
 
 import styles from './MainModuleCard.module.css';
 
 const MainModuleCard = () => {
+
+    // const text = "Categories";
+    // const item = { name: 'All categories', to: '/categories' };
+
     return (
-        <div></div>
+        <div>
+            <ModuleTitle
+                text="Categories"
+                name='All categories'
+                to='/categories'
+            />
+        </div>
     )
 };
 

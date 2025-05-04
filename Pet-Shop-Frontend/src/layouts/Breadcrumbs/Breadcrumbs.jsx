@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import NavigationBox from '../../components/NavigationBox/NavigationBox';
+import NavigationBox from '../../ui/NavigationBox/NavigationBox';
 
 import styles from './Breadcrumbs.module.css';
 
@@ -18,10 +18,11 @@ const Breadcrumbs = () => {
         })
     ];
 
-    const elements = crumbs.map((item, index) => (
+    const elements = crumbs.map(({ name, to }, index) => (
         <NavigationBox
-            key={item.to}
-            item={item}
+            key={to}
+            name={name}
+            to={to}
             index={index}
             isLast={index === crumbs.length - 1}
         />
