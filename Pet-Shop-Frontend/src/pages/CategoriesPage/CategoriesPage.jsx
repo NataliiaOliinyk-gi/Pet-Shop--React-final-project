@@ -1,4 +1,4 @@
-// import Breadcrumbs from '../../layouts/Breadcrumbs/Breadcrumbs';
+
 import Categories from '../../modules/Categories/Categories';
 
 // import styles from './CategoriesPage.module.css';
@@ -6,7 +6,6 @@ import Categories from '../../modules/Categories/Categories';
 const CategoriesPage = () => {
     return (
         <main>
-            {/* <Breadcrumbs path={[{ name: "Categories", to: "/categories" }]} /> */}
             <Categories />
         </main>
     );

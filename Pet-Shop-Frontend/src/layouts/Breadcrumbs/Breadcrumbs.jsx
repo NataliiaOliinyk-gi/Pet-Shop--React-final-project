@@ -1,36 +1,37 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+import NavigationBox from '../../components/NavigationBox/NavigationBox';
 
 import styles from './Breadcrumbs.module.css';
 
-const Breadcrumbs = ({ path }) => {
+const Breadcrumbs = () => {
 
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter(Boolean);
 
-    const crumbs = path || pathnames.map((part, index) => {
-        const to = '/' + pathnames.slice(0, index + 1).join('/');
-        const name = decodeURIComponent(part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' '));
-        return { name, to };
-    });
+    const crumbs = [
+        { name: 'Main page', to: '/' },
+        ...pathnames.map((part, index) => {
+            const to = '/' + pathnames.slice(0, index + 1).join('/');
+            const name = decodeURIComponent(part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' '));
+            return { name, to };
+        })
+    ];
 
+    const elements = crumbs.map((item, index) => (
+        <NavigationBox
+            key={item.to}
+            item={item}
+            index={index}
+            isLast={index === crumbs.length - 1}
+        />
+    ))
 
     return (
 
         <nav>
             <ul className={styles.breadcrumbList}>
-                <li className={styles.breadcrumbItem}>
-                    <Link to="/" className={styles.link}>Main page</Link>
-                </li>
-                {crumbs.map(({ name, to }, index) => (
-                    <li key={to} className={styles.breadcrumbItem}>
-                        <span className={styles.separator}></span>
-                        {index === crumbs.length - 1 ? (
-                            <span className={styles.current}>{name}</span>
-                        ) : (
-                            <Link to={to} className={styles.link}>{name}</Link>
-                        )}
-                    </li>
-                ))}
+                {elements}
             </ul>
         </nav>
     )

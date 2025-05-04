@@ -33,7 +33,7 @@ const SingleCategorie = () => {
                     navigate('/not-found');
                     return;
                 }
-    
+
                 // Отримуємо товари для цієї категорії по id
                 const categoryData = await getCategorieById(categoryItem.id);
                 setCategorie(categoryData.category.title);
@@ -44,7 +44,7 @@ const SingleCategorie = () => {
                 setLoading(false);
             }
         };
-    
+
         fetchData();
 
     }, [id, navigate]);
@@ -60,12 +60,7 @@ const SingleCategorie = () => {
 
     return (
 
-        <SectionLayout
-            title={categorie}
-            path={[
-                { name: "Categories", to: "/categories" },
-                { name: categorie, to: `/categories/${id}` }]}
-        >
+        <SectionLayout title={categorie} showBreadcrumbs>
             <Filters />
             {loading && <p className={styles.loading}>Loading...</p>}
             {error && <p className={styles.error}>{error}</p>}

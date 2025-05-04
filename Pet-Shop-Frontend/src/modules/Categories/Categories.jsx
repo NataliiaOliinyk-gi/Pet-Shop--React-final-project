@@ -42,10 +42,7 @@ const Categories = () => {
     });
 
     return (
-        <SectionLayout
-            title="Categories"
-            path={[{ name: "Categories", to: "/categories" }]}
-        >
+        <SectionLayout title="Categories" showBreadcrumbs >
             {loading && <p className={styles.loading}>Loading...</p>}
             {error && <p className={styles.error}>{error}</p>}
             <div className={styles.categoriesBox}>
