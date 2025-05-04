@@ -18,15 +18,6 @@ const Banner = ({ text }) => {
                 </div>
 
             </div>
-
-            {/* <div className={styles.banner}>
-                <div className={styles.wrapper}>
-                    <h1 className={styles.title}>{text}</h1>
-                    <Link to='/sales'>
-                        <Button text="Check out" />
-                    </Link>
-                </div>
-            </div> */}
         </Wrapper>
     )
 };
