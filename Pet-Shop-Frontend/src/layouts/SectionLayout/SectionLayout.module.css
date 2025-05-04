@@ -19,8 +19,6 @@
     }
 }
 
-/* @media screen and (max-width: 960px) {} */
-
 @media screen and (max-width: 768px) {
 
     .wrapper {
@@ -28,7 +26,7 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
 
     .wrapper {
         margin: 0 20px;

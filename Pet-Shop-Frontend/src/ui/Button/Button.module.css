@@ -29,7 +29,7 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 540px) {
 
     .btn {
         padding: 12rem 42rem;

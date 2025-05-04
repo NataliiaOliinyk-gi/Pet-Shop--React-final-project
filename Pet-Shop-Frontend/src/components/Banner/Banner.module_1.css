@@ -1,0 +1,135 @@
+.banner {
+    background-image: url("../../assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 600rem;
+    padding: 80rem 0 0 40rem;
+}
+
+.wrapper {
+    max-width: 1360rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.title {
+    font-size: 96rem;
+    font-weight: 700;
+    line-height: 110%;
+    color: var(--white-color);
+    margin-bottom: 40rem;
+}
+
+@media screen and (max-width: 1280px) {
+
+    .banner {
+        padding: 60rem 0 0 40rem;
+        height: 540rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+
+    .banner {
+        padding: 60rem 0 0 30rem;
+        height: 490rem;
+    }
+
+    .title {
+        font-size: 85rem;
+        margin-bottom: 35rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .banner {
+        padding: 50rem 0 0 30rem;
+        height: 430rem;
+    }
+
+    .title {
+        font-size: 78rem;
+        margin-bottom: 30rem;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    .banner {
+        padding: 50rem 0 0 30rem;
+        height: 410rem;
+    }
+
+    .title {
+        font-size: 70rem;
+        margin-bottom: 30rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .banner {
+        padding: 50rem 0 0 40rem;
+        height: 450rem;
+    }
+
+    .title {
+        font-size: 75rem;
+        margin-bottom: 35rem;
+    }
+}
+
+@media screen and (max-width: 896px) {
+
+    .banner {
+        height: 430rem;
+    }
+    .title {
+        font-size: 70rem;
+        margin-bottom: 30rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .banner {
+        padding: 40rem 0 0 35rem;
+        height: 400rem;
+    }
+    .title {
+        font-size: 68rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .banner {
+        height: 380rem;
+    }
+    .title {
+        font-size: 60rem;
+        margin-bottom: 28rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .banner {
+        padding: 40rem 0 0 24rem;
+        height: 400rem;
+    }
+
+    .title {
+        font-size: 65rem;
+        margin-bottom: 22rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .title {
+        font-size: 62rem;
+    }
+}

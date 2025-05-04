@@ -11,19 +11,6 @@ body {
     height: auto;
 }
 
-/* .screen-wrapper {
-    max-width: 1360rem;
-    margin: 0 auto;
-    padding: 0;
-} */
-
-/* @media screen and (max-width: 1360px) {
-
-    .screen-wrapper {
-        margin: 0 40rem;
-    }
-} */
-
 @media screen and (max-width: 960px) {
 
     html {
@@ -36,10 +23,6 @@ body {
     html {
         font-size: 0.8px;
     }
-
-    /* .skreen-wrapper {
-        margin: 0rem 30px;
-    } */
 }
 
 @media screen and (max-width: 420px) {
@@ -47,8 +30,4 @@ body {
     html {
         font-size: 0.7px;
     }
-
-    /* .skreen-wrapper {
-        margin: 0 20px;
-    } */
 }

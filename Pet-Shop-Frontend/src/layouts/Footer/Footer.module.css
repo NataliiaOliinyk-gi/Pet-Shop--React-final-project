@@ -73,7 +73,7 @@
     object-fit: contain;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1180px) {
 
     .contactsBox:nth-child(2n) {
         width: 38%;
@@ -176,7 +176,7 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
 
     .container {
         margin-top: 40rem;
