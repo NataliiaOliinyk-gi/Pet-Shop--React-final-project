@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
 import Filters from '../../components/Filters/Filters';
@@ -57,11 +57,7 @@ const SingleCategorie = () => {
 
 
     const elements = productsCategory.map(item => (
-        <div key={item.id}>
-            <Link to={`/products/${item.id}`} key={item.id} className={styles.link}>
-                <ProductCard item={item} />
-            </Link>
-        </div>
+        <ProductCard key={item.id} item={item} />
     ))
 
     return (
@@ -72,9 +68,9 @@ const SingleCategorie = () => {
                 <p className={styles.loading}>Loading...</p>}
             {error &&
                 <p className={styles.error}>{error}</p>}
-            <div className={styles.categoriesBox}>
+            <ul className={styles.categoriesBox}>
                 {elements}
-            </div>
+            </ul>
 
         </SectionLayout>
 

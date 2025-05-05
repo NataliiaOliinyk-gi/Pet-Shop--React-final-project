@@ -42,9 +42,13 @@
     max-width: 100%;
 }
 
-/* .title:hover {
+.title:hover {
     color: var(--second-color);
-} */
+}
+
+.link {
+    text-decoration: none;
+}
 
 .description {
     display: flex;
