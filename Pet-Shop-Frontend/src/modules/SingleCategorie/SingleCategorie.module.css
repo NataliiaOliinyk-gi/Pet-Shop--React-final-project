@@ -6,19 +6,3 @@
     justify-content: center;
     align-items: center;
 }
-
-.link {
-    text-decoration: none;
-}
-
-.loading {
-    font-size: 18rem;
-    margin: 20rem 0;
-    color: blue;
-}
-
-.error {
-    font-size: 18rem;
-    color: red;
-    margin: 20rem 0;
-}

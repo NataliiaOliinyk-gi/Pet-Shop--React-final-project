@@ -5,11 +5,11 @@ import FilterSorted from './FilterSorted/FilterSorted';
 
 import styles from './Filters.module.css';
 
-const Filters = ()=>{
+const Filters = ({ showDiscounted = true }) => {
     return (
         <div className={styles.filtersContainer}>
             <FilterPrice />
-            <FilterDiscounted />
+            {showDiscounted && <FilterDiscounted />}
             <FilterSorted />
         </div>
     )

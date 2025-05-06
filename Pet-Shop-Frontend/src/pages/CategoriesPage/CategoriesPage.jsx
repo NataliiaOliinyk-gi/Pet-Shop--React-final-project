@@ -1,7 +1,7 @@
 
 import Categories from '../../modules/Categories/Categories';
 
-// import styles from './CategoriesPage.module.css';
+import styles from './CategoriesPage.module.css';
 
 const CategoriesPage = () => {
     return (
