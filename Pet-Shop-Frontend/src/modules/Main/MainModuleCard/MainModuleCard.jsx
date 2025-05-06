@@ -1,7 +1,6 @@
 
 import SectionLayout from '../../../layouts/SectionLayout/SectionLayout';
 import Carousel from '../../Carousel/Carousel';
-
 import ModuleTitle from '../../ModuleTitle/ModuleTitle';
 
 import styles from './MainModuleCard.module.css';
