@@ -4,30 +4,19 @@ import Carousel from '../../Carousel/Carousel';
 
 import ModuleTitle from '../../ModuleTitle/ModuleTitle';
 
-// import { Link } from 'react-router-dom';
-// import CategorieCard from '../Categories/CategorieCard/CategorieCard';
-import useFetch from '../../../hooks/useFetch';
-import { getCategoriesAll } from '../../../api/categories-api';
-// import { slugify } from '../../utils/slugify';
-
 import styles from './MainModuleCard.module.css';
 
-const MainModuleCard = () => {
-
-    const { data, loading, error } = useFetch({
-        request: getCategoriesAll,
-        initialData: [],
-    });
+const MainModuleCard = ({text, name, to, data, loading, error}) => {
 
     return (
         <div>
             <SectionLayout>
                 <ModuleTitle
-                    text="Categories"
-                    name='All categories'
-                    to='/categories'
+                    text={text}
+                    name={name}
+                    to={to}
                 />
-                <Carousel data={data} loading={loading} error={error} to='/categories' name='All categories' />
+                <Carousel data={data} loading={loading} error={error} to={to} name={name} />
             </SectionLayout>
         </div>
     )
