@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 
 import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
+import Loader from '../../components/Loader/Loader';
+import LoadingError from '../../components/LoadingError/LoadingError';
 
 import CategorieCard from './CategorieCard/CategorieCard';
 
@@ -30,8 +32,8 @@ const Categories = () => {
 
     return (
         <SectionLayout title="Categories" showBreadcrumbs >
-            {loading && <p className={styles.loading}>Loading...</p>}
-            {error && <p className={styles.error}>{error}</p>}
+            <Loader loading={loading} />
+            {error && <LoadingError>{error}</LoadingError>}
             <ul className={styles.categoriesBox}>
                 {elements}
             </ul>

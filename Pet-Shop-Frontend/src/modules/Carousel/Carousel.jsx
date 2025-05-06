@@ -8,6 +8,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import Loader from '../../components/Loader/Loader';
+import LoadingError from '../../components/LoadingError/LoadingError';
 import CategorieCard from '../Categories/CategorieCard/CategorieCard';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
@@ -46,8 +48,8 @@ const Carousel = ({ data, loading, error, to, name }) => {
                 {elements}
             </Swiper>
 
-            {loading && <p className={styles.loading}>Loading...</p>}
-            {error && <p className={styles.error}>{error}</p>}
+            <Loader loading={loading} />
+            {error && <LoadingError>{error}</LoadingError>}
         </div>
     )
 };
