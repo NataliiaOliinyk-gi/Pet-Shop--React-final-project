@@ -1,0 +1,27 @@
+.title {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    color: var(--main-color);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.price {
+    font-size: 40rem;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--main-color);
+}
+
+.discont {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--opacity-color);
+}

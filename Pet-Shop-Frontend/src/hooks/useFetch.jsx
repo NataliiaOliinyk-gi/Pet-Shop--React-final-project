@@ -9,6 +9,7 @@ const useFetch = ({ request, initialData }) => {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
+            setError(null);
             const { data, error } = await request();
             setLoading(false);
             if (error) {

@@ -24,7 +24,7 @@ const Categories = () => {
     const elements = categories.map(item => {
         const slug = slugify(item.title);
         return (
-            <Link to={`/categories/${slug}`} key={item.id} className={styles.link}>
+            <Link to={`/categories/${item.id}-${slug}`} key={item.id} className={styles.link}>
                 <CategorieCard item={item} />
             </Link>
         )

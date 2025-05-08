@@ -13,10 +13,42 @@ const Breadcrumbs = () => {
         { name: 'Main page', to: '/' },
         ...pathnames.map((part, index) => {
             const to = '/' + pathnames.slice(0, index + 1).join('/');
-            const name = decodeURIComponent(part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' '));
+
+            // Спеціальні назви
+            const specialNames = {
+                sales: 'All sales',
+                products: 'All products',
+            };
+
+            let name;
+
+            if (specialNames[part]) {
+                name = specialNames[part];
+            } else {
+                // Якщо є ID на початку — видаляємо
+                const cleanedPart = part.replace(/^\d+-/, '');
+
+                // Робимо кожне слово з великої літери
+                name = decodeURIComponent(
+                    cleanedPart
+                        .split('-')
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(' ')
+                );
+            }
+
             return { name, to };
         })
     ];
+
+    // const crumbs = [
+    //     { name: 'Main page', to: '/' },
+    //     ...pathnames.map((part, index) => {
+    //         const to = '/' + pathnames.slice(0, index + 1).join('/');
+    //         const name = decodeURIComponent(part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' '));
+    //         return { name, to };
+    //     })
+    // ];
 
     const elements = crumbs.map(({ name, to }, index) => (
         <NavigationBox

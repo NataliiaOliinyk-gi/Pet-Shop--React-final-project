@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 
 import { localUrl } from '../../api/backendInstance';
+import { slugify } from '../../utils/slugify';
 
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ item }) => {
+
+    const slug = slugify(item.title);
+
     return (
         <li className={styles.card}>
             <div className={styles.imageBox}>
@@ -12,7 +16,7 @@ const ProductCard = ({ item }) => {
             </div>
 
             <div className={styles.boxContent}>
-                <Link to={`/products/${item.id}`} className={styles.link}>
+                <Link to={`/products/${item.id}-${slug}`} className={styles.link}>
                     <p className={styles.title}>{item.title}</p>
                 </Link>
 
