@@ -35,7 +35,7 @@
 .contactsBox {
     border-radius: 12px;
     padding: 32rem;
-    background-color: var(--hover-color);
+    background-color: var(--hover-background-color);
     box-sizing: border-box;
 }
 
@@ -51,7 +51,7 @@
     font-size: 20rem;
     font-weight: 500;
     line-height: 130%;
-    color: var(--opacity-color);
+    color: var(--light-text-color);
     margin-bottom: 16rem;
 }
 
@@ -59,7 +59,7 @@
     font-size: 40rem;
     font-weight: 600;
     line-height: 110%;
-    color: var(--main-color);
+    color: var(--main-text-color);
 }
 
 .socialIcons {

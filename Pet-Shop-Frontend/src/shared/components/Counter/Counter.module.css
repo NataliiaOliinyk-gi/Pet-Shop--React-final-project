@@ -1,0 +1,59 @@
+.counter {
+    max-width: 200rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count {
+    border-bottom: 1px solid var(--light-color);
+    border-top: 1px solid var(--light-color);
+    width: 96rem;
+    height: 58rem;
+
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    color: var(--main-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: 1px solid var(--light-color);
+    border-radius: 6px;
+    width: 58rem;
+    height: 58rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .counter {
+        max-width: 180rem;
+    }
+}
+
+@media screen and (max-width: 896px) {
+
+    .counter {
+        max-width: 160rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    .count {
+        height: 50rem;
+    }
+
+    .box {
+        height: 50rem;
+    }
+}

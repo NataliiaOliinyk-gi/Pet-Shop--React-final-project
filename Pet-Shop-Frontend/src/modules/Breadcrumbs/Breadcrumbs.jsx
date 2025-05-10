@@ -62,11 +62,11 @@ const Breadcrumbs = () => {
 
     return (
 
-        <nav>
+        <div>
             <ul className={styles.breadcrumbList}>
                 {elements}
             </ul>
-        </nav>
+        </div>
     )
 };
 

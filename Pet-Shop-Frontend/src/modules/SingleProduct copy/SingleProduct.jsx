@@ -38,32 +38,36 @@ const SingleProduct = () => {
                 <>
                     <div className={styles.container}>
 
-                        <div className={styles.imageContainer}
-                            style={{ backgroundImage: `url(${localUrl}${product.image})` }}>
-                        </div>
+                        <div className={styles.mainContent}>
 
-                        <div className={styles.descriptionsContainer}>
-                            <p className={styles.title}>{product.title}</p>
+                            
+                            <div className={styles.descriptionsContainer}>
+                                <p className={styles.title}>{product.title}</p>
 
-                            <div className={styles.priceContainer}>
-                                <div className={styles.priceBox}>
-                                    {product.discont_price ? (
-                                        <>
-                                            <p className={styles.price}>${product.discont_price}</p>
-                                            <p className={styles.discont}>${product.price}</p>
-                                        </>
-                                    ) : (
-                                        <p className={styles.price}>${product.price}</p>
-                                    )}
+                                <div className={styles.priceContainer}>
+                                    <div className={styles.priceBox}>
+                                        {product.discont_price ? (
+                                            <>
+                                                <p className={styles.price}>${product.discont_price}</p>
+                                                <p className={styles.discont}>${product.price}</p>
+                                            </>
+                                        ) : (
+                                            <p className={styles.price}>${product.price}</p>
+                                        )}
+                                    </div>
+                                    {product.discont_price &&
+                                        <DiscountBadge price={product.price} discont_price={product.discont_price} />}
                                 </div>
-                                {product.discont_price &&
-                                    <DiscountBadge price={product.price} discont_price={product.discont_price} />}
+                                <div className={styles.buttonsBox}>
+                                    <Counter count="1" />
+                                    <div className={styles.btnBox}>
+                                        <Button text="Add to cart" width="100%" />
+                                    </div>
+                                </div>
                             </div>
-                            <div className={styles.buttonsBox}>
-                                <Counter count="1" />
-                                <div className={styles.btnBox}>
-                                    <Button text="Add to cart" width="100%" />
-                                </div>
+
+                            <div className={styles.imageContainer}
+                                style={{ backgroundImage: `url(${localUrl}${product.image})` }}>
                             </div>
 
                             <div className={styles.descriptionsTextContainer}>
