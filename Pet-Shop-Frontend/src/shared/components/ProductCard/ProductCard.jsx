@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Button from '../Button/Button';
+import DiscountBadge from '../DiscountBadge/DiscountBadge';
 
 import { localUrl } from '../../api/backendInstance';
 import { slugify } from '../../utils/slugify';
@@ -27,9 +28,6 @@ const ProductCard = ({ item }) => {
                         <>
                             <p className={styles.price}>${item.discont_price}</p>
                             <p className={styles.discont}>${item.price}</p>
-                            <div className={styles.discountBadge}>
-                                -{Math.round(((item.price - item.discont_price) / item.price) * 100)}%
-                            </div>
                         </>
                     ) : (
                         <p className={styles.price}>${item.price}</p>
@@ -40,6 +38,11 @@ const ProductCard = ({ item }) => {
             <div className={styles.addToCartBtnBox}>
                 <Button text="Add to cart" width="100%" />
             </div>
+
+            {item.discont_price &&
+                <div className={styles.discountBadgeBox}>
+                    <DiscountBadge price={item.price} discont_price={item.discont_price} />
+                </div>}
         </li>
     )
 };

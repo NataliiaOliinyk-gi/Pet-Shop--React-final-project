@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
 import Loader from '../../shared/components/Loader/Loader';
 import LoadingError from '../../shared/components/LoadingError/LoadingError';
+import DiscountBadge from '../../shared/components/DiscountBadge/DiscountBadge';
 
 import useFetch from '../../shared/hooks/useFetch';
 
@@ -33,9 +34,6 @@ const SingleProduct = () => {
 
             {product &&
                 <>
-                    {/* <div className={styles.imageBox}>
-                        <img src={`${localUrl}${product.image}`} alt={product.title} className={`img-fluid ${styles.image}`} />
-                    </div> */}
                     <div className={styles.container}>
                         <div className={styles.imageContainer}
                             style={{ backgroundImage: `url(${localUrl}${product.image})` }}>
@@ -57,9 +55,7 @@ const SingleProduct = () => {
                                     )}
                                 </div>
                                 {product.discont_price &&
-                                    <div className={styles.discountBadge}>
-                                        -{Math.round(((product.price - product.discont_price) / product.price) * 100)}%
-                                    </div>}
+                                    <DiscountBadge price={product.price} discont_price={product.discont_price} />}
                             </div>
 
 
