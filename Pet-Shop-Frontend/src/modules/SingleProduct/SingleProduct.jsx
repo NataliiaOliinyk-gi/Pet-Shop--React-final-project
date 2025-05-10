@@ -1,15 +1,14 @@
 import { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 
-import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Loader from '../../components/Loader/Loader';
-import LoadingError from '../../components/LoadingError/LoadingError';
+import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
+import Loader from '../../shared/components/Loader/Loader';
+import LoadingError from '../../shared/components/LoadingError/LoadingError';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../shared/hooks/useFetch';
 
-import { getProductById } from '../../api/products-api';
-
-import { localUrl } from '../../api/backendInstance';
+import { getProductById } from '../../shared/api/products-api';
+import { localUrl } from '../../shared/api/backendInstance';
 
 import styles from './SingleProduct.module.css';
 
@@ -34,14 +33,51 @@ const SingleProduct = () => {
 
             {product &&
                 <>
-                    <div className={styles.imageBox}>
+                    {/* <div className={styles.imageBox}>
                         <img src={`${localUrl}${product.image}`} alt={product.title} className={`img-fluid ${styles.image}`} />
+                    </div> */}
+                    <div className={styles.container}>
+                        <div className={styles.imageContainer}
+                            style={{ backgroundImage: `url(${localUrl}${product.image})` }}>
+
+                        </div>
+                        <div className={styles.descriptionsContainer}>
+                            <p className={styles.title}>{product.title}</p>
+
+                            <div className={styles.priceContainer}>
+                                <div className={styles.priceBox}>
+                                    {product.discont_price ? (
+                                        <>
+                                            <p className={styles.price}>${product.discont_price}</p>
+                                            <p className={styles.discont}>${product.price}</p>
+
+                                        </>
+                                    ) : (
+                                        <p className={styles.price}>${product.price}</p>
+                                    )}
+                                </div>
+                                {product.discont_price &&
+                                    <div className={styles.discountBadge}>
+                                        -{Math.round(((product.price - product.discont_price) / product.price) * 100)}%
+                                    </div>}
+                            </div>
+
+
+
+                            <div></div>
+
+                            <div>
+                                <p className={styles.descriptions}>Description</p>
+                                <p className={styles.descriptionsText}>{product.description}</p>
+                            </div>
+
+
+
+                        </div>
+
                     </div>
-                    <p className={styles.title}>{product.title}</p>
-                    <p className={styles.title}>{product.description}</p>
-                    <p className={styles.price}>${product.discont_price}</p>
-                    <p className={styles.discont}>${product.price}</p>
-                </>}
+                </>
+            }
 
         </SectionLayout>
     );

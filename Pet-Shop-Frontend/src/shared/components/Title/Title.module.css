@@ -1,0 +1,27 @@
+.title {
+    font-size: 64rem;
+    font-weight: 700;
+    line-height: 110%;
+    color: var(--main-text-color);
+}
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        font-size: 58rem;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    .title {
+        font-size: 42rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .title {
+        font-size: 36rem;
+    }
+}

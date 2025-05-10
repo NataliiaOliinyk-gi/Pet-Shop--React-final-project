@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Title from '../../ui/Title/Title';
-import Button from '../../ui/Button/Button';
+import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
+import Title from '../../shared/components/Title/Title';
+import Button from '../../shared/components/Button/Button';
 
 import styles from './NotFound.module.css';
 

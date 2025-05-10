@@ -1,11 +1,11 @@
 
-import Banner from '../../components/Banner/Banner';
+import Banner from '../Banner/Banner';
 
 import MainModuleCard from './MainModuleCard/MainModuleCard';
 
-import useFetch from '../../hooks/useFetch';
-import { getCategoriesAll } from '../../api/categories-api';
-import { getProductsAll } from '../../api/products-api'
+import useFetch from '../../shared/hooks/useFetch';
+import { getCategoriesAll } from '../../shared/api/categories-api';
+import { getProductsAll } from '../../shared/api/products-api'
 
 import styles from './Main.module.css';
 

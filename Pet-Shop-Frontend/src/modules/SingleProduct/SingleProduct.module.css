@@ -1,27 +1,92 @@
-.title {
-    font-size: 20rem;
-    font-weight: 500;
-    line-height: 130%;
-    text-align: center;
-    color: var(--main-color);
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32rem;
+}
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+.imageContainer {
+    width: 548rem;
+    height: 572rem;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.descriptionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32rem;
+    width: 50%;
+    width: 548rem;
+    height: 574rem;
+}
+
+.title {
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+}
+
+.descriptions {
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 130%;
+    color: var(--main-text-color);
+    margin-bottom: 16rem;
+}
+
+.descriptionsText {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--main-text-color);
+}
+
+.priceContainer {
+    display: flex;
+    gap: 16rem;
+}
+
+.priceBox {
+    display: flex;
+    gap: 32rem;
+    align-items: flex-end;
 }
 
 .price {
-    font-size: 40rem;
-    font-weight: 600;
+    font-size: 64rem;
+    font-weight: 700;
     line-height: 110%;
-    color: var(--main-color);
+    color: var(--main-text-color);
 }
 
 .discont {
-    font-size: 20rem;
+    font-size: 40rem;
     font-weight: 500;
     line-height: 130%;
     text-decoration: line-through;
-    color: var(--opacity-color);
+    color: var(--light-text-color);
+}
+
+.discountBadge {
+    /* position: absolute;
+    top: 16px;
+    right: 16px; */
+
+    background-color: var(--main-background-color);
+    border-radius: 6px;
+    padding: 4px 8px;
+    width: 63px;
+    height: 34px;
+
+    color: var(--white-text-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.03em;
 }

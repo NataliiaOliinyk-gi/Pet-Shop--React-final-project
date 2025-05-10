@@ -20,7 +20,7 @@ const Navigations = () => {
                 <Route path='/categories' element={<CategoriesPage />} />
                 <Route path='/products' element={<ProductsAllPage />} />
                 <Route path='/sales' element={<SalesAllPage />} />
-                <Route path='/order/send' element={<ShoppingCartPage />} />
+                <Route path='/cart' element={<ShoppingCartPage />} />
 
                 <Route path='*' element={<NotFoundPage />} />
 

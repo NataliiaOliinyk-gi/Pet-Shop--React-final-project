@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 
-import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Loader from '../../components/Loader/Loader';
-import LoadingError from '../../components/LoadingError/LoadingError';
+import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
+import Loader from '../../shared/components/Loader/Loader';
+import LoadingError from '../../shared/components/LoadingError/LoadingError';
 
 import CategorieCard from './CategorieCard/CategorieCard';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../shared/hooks/useFetch';
 
-import { getCategoriesAll } from '../../api/categories-api';
-import { slugify } from '../../utils/slugify';
+import { getCategoriesAll } from '../../shared/api/categories-api';
+import { slugify } from '../../shared/utils/slugify';
 
 import styles from './Categories.module.css';
 

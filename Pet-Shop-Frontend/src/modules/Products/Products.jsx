@@ -1,13 +1,13 @@
 
-import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Filters from '../../components/Filters/Filters';
-import Loader from '../../components/Loader/Loader';
-import LoadingError from '../../components/LoadingError/LoadingError';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
+import Filters from '../../shared/components//Filters/Filters';
+import Loader from '../../shared/components/Loader/Loader';
+import LoadingError from '../../shared/components/LoadingError/LoadingError';
+import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../shared/hooks/useFetch';
 
-import { getProductsAll } from '../../api/products-api';
+import { getProductsAll } from '../../shared/api/products-api';
 
 
 import styles from './Products.module.css';

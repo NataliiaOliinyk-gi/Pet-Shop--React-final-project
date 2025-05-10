@@ -8,12 +8,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import Loader from '../../components/Loader/Loader';
-import LoadingError from '../../components/LoadingError/LoadingError';
+import Loader from '../../shared/components/Loader/Loader';
+import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import CategorieCard from '../Categories/CategorieCard/CategorieCard';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
-import { slugify } from '../../utils/slugify';
+import { slugify } from '../../shared/utils/slugify';
 
 import styles from './Carousel.module.css';
 

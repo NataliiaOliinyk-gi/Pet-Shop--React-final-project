@@ -1,0 +1,39 @@
+.btn {
+    border-radius: 6px;
+    padding: 16rem 56rem;
+    background-color: var(--main-background-color);
+    border: none;
+    cursor: pointer;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    color: var(--white-color);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.btn:hover {
+    background-color: var(--second-background-color);
+}
+
+.btn:active {
+    border: 1px solid var(--second-background-color);
+    background-color: var(--white-background-color);
+    color: var(--main-text-color);
+}
+
+@media screen and (max-width: 768px) {
+
+    .btn {
+        padding: 14rem 48rem;
+        font-size: 18rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .btn {
+        padding: 12rem 42rem;
+        font-size: 16rem;
+    }
+}

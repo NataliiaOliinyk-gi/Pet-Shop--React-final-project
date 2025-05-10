@@ -1,15 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { useCallback } from 'react';
 
-import SectionLayout from '../../layouts/SectionLayout/SectionLayout';
-import Loader from '../../components/Loader/Loader';
-import LoadingError from '../../components/LoadingError/LoadingError';
-import Filters from '../../components/Filters/Filters';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
+import Loader from '../../shared/components/Loader/Loader';
+import LoadingError from '../../shared/components/LoadingError/LoadingError';
+import Filters from '../../shared/components/Filters/Filters';
+import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../shared/hooks/useFetch';
 
-import { getCategorieById } from '../../api/categories-api';
+import { getCategorieById } from '../../shared/api/categories-api';
 
 import styles from './SingleCategorie.module.css';
 

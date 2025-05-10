@@ -1,0 +1,132 @@
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.bannerImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 80rem 0 0 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40rem;
+}
+
+.title {
+    font-size: 96rem;
+    font-weight: 700;
+    line-height: 110%;
+    color: var(--white-text-color);
+}
+
+@media screen and (max-width: 1280px) {
+
+    .content {
+        padding: 60rem 0 0 40rem;
+    }
+
+    .title {
+        font-size: 86rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+
+    .content {
+        padding: 50rem 0 0 40rem;
+        gap: 36rem;
+    }
+
+    .title {
+        font-size: 80rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .content {
+        padding: 45rem 0 0 30rem;
+    }
+
+    .title {
+        font-size: 78rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .content {
+        padding: 50rem 0 0 30rem;
+        gap: 30rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .content {
+        padding: 45rem 0 0 30rem;
+        gap: 24rem;
+    }
+
+    .title {
+        font-size: 68rem;
+    }
+}
+
+@media screen and (max-width: 667px) {
+
+    .content {
+        padding: 40rem 0 0 30rem;
+        gap: 20rem;
+    }
+
+    .title {
+        font-size: 60rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .content {
+        padding: 35rem 0 0 30rem;
+    }
+
+    .title {
+        font-size: 50rem;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    .content {
+        padding: 30rem 0 0 30rem;
+        gap: 18rem;
+    }
+
+    .title {
+        font-size: 45rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .content {
+        padding: 28rem 0 0 22rem;
+        gap: 15rem;
+    }
+
+    .title {
+        font-size: 40rem;
+    }
+}

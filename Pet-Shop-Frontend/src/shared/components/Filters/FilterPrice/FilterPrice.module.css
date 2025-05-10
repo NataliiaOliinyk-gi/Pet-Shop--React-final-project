@@ -1,0 +1,28 @@
+.field {
+    width: 112px;
+    height: 36px;
+    border: 1px solid var(--light-color);
+    border-radius: 6px;
+    padding: 8px 16px;
+    outline: none;
+
+    font-size: 16rem;
+    font-weight: 500;
+    line-height: 126%;
+    color: var(--light-text-color);
+}
+
+.field::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16rem;
+    font-weight: 500;
+    line-height: 126%;
+    color: var(--light-text-color);
+}
+
+@media screen and (max-width: 768px) {
+
+    .field {
+        height: 36rem;
+    }
+}

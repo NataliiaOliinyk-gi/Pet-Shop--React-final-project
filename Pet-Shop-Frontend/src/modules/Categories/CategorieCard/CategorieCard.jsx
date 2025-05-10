@@ -1,5 +1,5 @@
 
-import { localUrl } from '../../../api/backendInstance';
+import { localUrl } from '../../../shared/api/backendInstance';
 
 import styles from './CategorieCard.module.css';
 

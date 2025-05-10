@@ -1,10 +1,10 @@
 
-import Header from '../../layouts/Header/Header';
-import Footer from '../../layouts/Footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Navigations from '../../pages/Navigations';
 
 
-import '../../styles/style.css';
+import '../../shared/styles/style.css';
 
 function App() {
 

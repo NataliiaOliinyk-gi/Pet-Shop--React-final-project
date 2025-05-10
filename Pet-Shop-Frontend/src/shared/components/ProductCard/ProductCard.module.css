@@ -1,0 +1,105 @@
+.card {
+    position: relative;
+    width: 316px;
+    height: 422px;
+    border: 1px solid var(--light-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20rem;
+}
+
+.imageBox {
+    width: 100%;
+    height: 284px;
+    border-bottom: 1px solid var(--light-color);
+    overflow: hidden;
+}
+
+.image {
+    border-radius: 12px;
+}
+
+.boxContent {
+    padding: 0px 32rem 32rem 32rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+}
+
+.title {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    color: var(--main-text-color);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.title:hover {
+    color: var(--second-text-color);
+}
+
+.link {
+    text-decoration: none;
+}
+
+.description {
+    display: flex;
+    align-items: flex-end;
+    gap: 16rem;
+}
+
+.price {
+    font-size: 40rem;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--main-text-color);
+}
+
+.discont {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--light-text-color);
+}
+
+.discountBadge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    background-color: var(--main-background-color);
+    border-radius: 6px;
+    padding: 4px 8px;
+    width: 63px;
+    height: 34px;
+
+    color: var(--white-text-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+}
+
+.addToCartBtnBox {
+    position: absolute;
+    top: 210px;
+    left: 16px;
+    width: 284px;
+    visibility: hidden;
+}
+
+/* при наведенні на картку — показуємо кнопку */
+
+.card:hover .addToCartBtnBox {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,71 @@
+.customCheckbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkboxInput {
+    display: none;
+}
+
+.checkboxBox {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: inline-block;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+/* сіра рамка */
+.checkboxBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* SVG галочка */
+.checkboxCheck {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 24px;
+    height: 24px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Показати галочку, коли input чекнутий */
+.checkboxInput:checked+.checkboxBox .checkboxCheck {
+    opacity: 1;
+}
+
+/* Синій фон, коли чекнутий */
+.checkboxInput:checked+.checkboxBox {
+    background-color: var(--main-background-color);
+}
+
+/* сховати сіру обводку */
+.checkboxInput:checked+.checkboxBox .checkboxBorder {
+    opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    .checkboxBox {
+        position: relative;
+        width: 36rem;
+        height: 36rem;
+    }
+
+    .checkboxCheck {
+        width: 24rem;
+        height: 24rem;
+    }
+}
