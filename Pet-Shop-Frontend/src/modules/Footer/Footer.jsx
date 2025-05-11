@@ -28,6 +28,10 @@ const Footer = () => {
                         </a>
                     ))}
                 </div>
+            ) : item.title === 'Phone' ? (
+                <a className={styles.description} href={`tel:${item.description.replace(/\s+/g, '')}`}>
+                    {item.description}
+                </a>
             ) : (
                 <p className={styles.description}>{item.description}</p>
             )}

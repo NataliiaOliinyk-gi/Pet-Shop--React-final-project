@@ -60,6 +60,7 @@
     font-weight: 600;
     line-height: 110%;
     color: var(--main-text-color);
+    text-decoration: none;
 }
 
 .socialIcons {
