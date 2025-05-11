@@ -10,7 +10,7 @@ import CategorieCard from './CategorieCard/CategorieCard';
 // import useFetch from '../../shared/hooks/useFetch';
 
 // import { getCategoriesAllApi } from '../../shared/api/categories-api';
-import { selectCategoriesAll } from '../../redux/categories/categories-selector';
+import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 import { slugify } from '../../shared/utils/slugify';
 
 import styles from './Categories.module.css';

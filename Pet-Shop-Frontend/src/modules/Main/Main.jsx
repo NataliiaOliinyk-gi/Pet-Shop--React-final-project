@@ -7,7 +7,7 @@ import MainModuleCard from './MainModuleCard/MainModuleCard';
 import useFetch from '../../shared/hooks/useFetch';
 
 import { getProductsAll } from '../../shared/api/products-api';
-import { selectCategoriesAll } from '../../redux/categories/categories-selector';
+import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 
 import styles from './Main.module.css';
 

@@ -11,7 +11,7 @@ import ProductCard from '../../shared/components/ProductCard/ProductCard';
 import useFetch from '../../shared/hooks/useFetch';
 
 import { getCategorieById } from '../../shared/api/categories-api';
-import { selectCategoriesAll } from '../../redux/categories/categories-selector';
+import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 import { slugify } from '../../shared/utils/slugify';
 
 import styles from './SingleCategorie.module.css';
