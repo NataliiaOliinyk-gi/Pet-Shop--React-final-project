@@ -2,7 +2,6 @@
     background-color: var(--main-background-color);
     border-radius: 6px;
     padding: 4px 8px;
-    width: 63px;
     height: 34px;
 
     color: var(--white-text-color);
@@ -18,7 +17,6 @@
 
     .discountBadge {
         padding: 4rem 8rem;
-        width: 63rem;
         height: 34rem;
         font-size: 20rem;
     }

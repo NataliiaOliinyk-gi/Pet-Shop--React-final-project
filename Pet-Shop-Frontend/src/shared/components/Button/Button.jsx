@@ -1,9 +1,9 @@
 
 import styles from './Button.module.css';
 
-const Button = ({ text, width = "auto" }) => {
+const Button = ({ text, width = "auto", onClick }) => {
     return (
-        <button className={styles.btn} style={{width: `${width}`}}>{text}</button>
+        <button className={styles.btn} style={{width: `${width}`}} onClick={onClick}>{text}</button>
     );
 };
 

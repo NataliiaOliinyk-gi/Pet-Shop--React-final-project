@@ -1,16 +1,23 @@
 import { Link } from 'react-router-dom';
+import { useDispatch} from 'react-redux';
 
 import Button from '../Button/Button';
 import DiscountBadge from '../DiscountBadge/DiscountBadge';
 
 import { localUrl } from '../../api/backendInstance';
 import { slugify } from '../../utils/slugify';
+import { addToCart } from '../../../redux/cart/cart-slice';
 
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ item }) => {
 
     const slug = slugify(item.title);
+    const dispatch = useDispatch();
+
+    const onAddProductToCart = (payload) => {
+        dispatch(addToCart(payload));
+    };
 
     return (
         <li className={styles.card}>
@@ -36,7 +43,7 @@ const ProductCard = ({ item }) => {
             </div>
 
             <div className={styles.addToCartBtnBox}>
-                <Button text="Add to cart" width="100%" />
+                <Button text="Add to cart" width="100%" onClick={()=> onAddProductToCart(item)}/>
             </div>
 
             {item.discont_price &&

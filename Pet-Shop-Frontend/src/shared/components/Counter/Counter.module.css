@@ -27,10 +27,14 @@
     border-radius: 6px;
     width: 58rem;
     height: 58rem;
+    cursor: pointer;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.box:hover {
+    background-color: var(--hover-background-color);
 }
 
 @media screen and (max-width: 1024px) {
