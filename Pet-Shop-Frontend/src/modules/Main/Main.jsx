@@ -1,20 +1,19 @@
+import { useSelector } from 'react-redux';
 
 import Banner from '../Banner/Banner';
 
 import MainModuleCard from './MainModuleCard/MainModuleCard';
 
 import useFetch from '../../shared/hooks/useFetch';
-import { getCategoriesAll } from '../../shared/api/categories-api';
-import { getProductsAll } from '../../shared/api/products-api'
+
+import { getProductsAll } from '../../shared/api/products-api';
+import { selectCategoriesAll } from '../../redux/categories/categories-selector';
 
 import styles from './Main.module.css';
 
 const Main = () => {
 
-    const { data: categories, loading: loadingCategories, error: errorCategories } = useFetch({
-        request: getCategoriesAll,
-        initialData: [],
-    });
+    const { categories, loading: loadingCategories, error: errorCategories } = useSelector(selectCategoriesAll)
 
     const { data: products, loading: loadingSale, error: errorSale } = useFetch({
         request: getProductsAll,

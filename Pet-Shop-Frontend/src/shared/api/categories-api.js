@@ -2,7 +2,7 @@ import { categoriesInstance } from './backendInstance';
 
 import requestDecorator from './requestDecorator';
 
-export const getCategoriesAll = requestDecorator(async () => {
+export const getCategoriesAllApi = requestDecorator(async () => {
     const { data } = await categoriesInstance.get("/all");
     return data;
 });
