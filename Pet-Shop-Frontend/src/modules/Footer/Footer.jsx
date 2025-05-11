@@ -1,11 +1,15 @@
 
 import Title from '../../shared/components/Title/Title';
+import LocationMap from '../../shared/components/LocationMap/LocationMap';
 
 import contacts from './contacts';
 
 import styles from './Footer.module.css';
 
 const Footer = () => {
+
+    const addressItem = contacts.find(item => item.title === 'Address');
+    const address = addressItem?.description || '';
 
     const elements = contacts.map(item => (
         <div className={styles.contactsBox} key={item.title}>
@@ -38,8 +42,11 @@ const Footer = () => {
                     <div className={styles.box}>
                         {elements}
                     </div>
-                    <div>
+                    {/* <div>
                         <img className={styles.map} src="../../src/assets/images/map.png" alt="Map" />
+                    </div> */}
+                    <div className={styles.map}>
+                        <LocationMap address={address} />
                     </div>
                 </div>
             </div>
