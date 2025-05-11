@@ -1,0 +1,7 @@
+.text {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--main-text-color);
+    margin-bottom: 32px;
+}

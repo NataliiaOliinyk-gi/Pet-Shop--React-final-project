@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Button from '../Button/Button';
 import DiscountBadge from '../DiscountBadge/DiscountBadge';
+import PriceBox from '../PriceBox/PriceBox';
 
 import { localUrl } from '../../api/backendInstance';
 import { slugify } from '../../utils/slugify';
@@ -29,21 +30,15 @@ const ProductCard = ({ item }) => {
                 <Link to={`/products/${item.id}-${slug}`} className={styles.link}>
                     <p className={styles.title}>{item.title}</p>
                 </Link>
-
-                <div className={styles.description}>
-                    {item.discont_price ? (
-                        <>
-                            <p className={styles.price}>${item.discont_price}</p>
-                            <p className={styles.discont}>${item.price}</p>
-                        </>
-                    ) : (
-                        <p className={styles.price}>${item.price}</p>
-                    )}
-                </div>
+                
+                <PriceBox
+                    discont_price={item.discont_price}
+                    price={item.price}
+                />
             </div>
 
             <div className={styles.addToCartBtnBox}>
-                <Button text="Add to cart" width="100%" onClick={()=> onAddProductToCart(item)}/>
+                <Button text="Add to cart" width="100%" onClick={() => onAddProductToCart(item)} />
             </div>
 
             {item.discont_price &&

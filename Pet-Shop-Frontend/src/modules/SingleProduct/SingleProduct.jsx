@@ -8,6 +8,7 @@ import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import DiscountBadge from '../../shared/components/DiscountBadge/DiscountBadge';
 import Counter from '../../shared/components/Counter/Counter';
 import Button from '../../shared/components/Button/Button';
+import PriceBox from '../../shared/components/PriceBox/PriceBox';
 
 import useFetch from '../../shared/hooks/useFetch';
 
@@ -63,23 +64,29 @@ const SingleProduct = () => {
                             <p className={styles.title}>{product.title}</p>
 
                             <div className={styles.priceContainer}>
-                                <div className={styles.priceBox}>
-                                    {product.discont_price ? (
-                                        <>
-                                            <p className={styles.price}>${product.discont_price}</p>
-                                            <p className={styles.discont}>${product.price}</p>
-                                        </>
-                                    ) : (
-                                        <p className={styles.price}>${product.price}</p>
-                                    )}
-                                </div>
+                                <PriceBox
+                                    discont_price={product.discont_price}
+                                    price={product.price}
+                                    variant="large"
+                                />
                                 {product.discont_price &&
-                                    <DiscountBadge price={product.price} discont_price={product.discont_price} />}
+                                    <DiscountBadge
+                                        price={product.price}
+                                        discont_price={product.discont_price}
+                                    />}
                             </div>
                             <div className={styles.buttonsBox}>
-                                <Counter count={count} plus={onPlus} minus={onMinus} />
+                                <Counter
+                                    count={count}
+                                    plus={onPlus}
+                                    minus={onMinus}
+                                />
                                 <div className={styles.btnBox}>
-                                    <Button text="Add to cart" width="100%" onClick={() => onAddProductToCart({...product, count})} />
+                                    <Button
+                                        text="Add to cart"
+                                        width="100%"
+                                        onClick={() => onAddProductToCart({ ...product, count })}
+                                    />
                                 </div>
                             </div>
 

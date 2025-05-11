@@ -49,27 +49,6 @@
     text-decoration: none;
 }
 
-.description {
-    display: flex;
-    align-items: flex-end;
-    gap: 16rem;
-}
-
-.price {
-    font-size: 40rem;
-    font-weight: 600;
-    line-height: 110%;
-    color: var(--main-text-color);
-}
-
-.discont {
-    font-size: 20rem;
-    font-weight: 500;
-    line-height: 130%;
-    text-decoration: line-through;
-    color: var(--light-text-color);
-}
-
 .discountBadgeBox {
     position: absolute;
     top: 16px;

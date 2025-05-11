@@ -1,0 +1,55 @@
+.priceBox {
+    display: flex;
+    gap: 16rem;
+    align-items: flex-end;
+}
+
+.large .priceBox {
+    gap: 32rem;
+}
+
+.price {
+    font-size: 40rem;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--main-text-color);
+}
+
+.large .price {
+    font-size: 64rem;
+    font-weight: 700;
+}
+
+.discont {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--light-text-color);
+}
+
+.large .discont {
+    font-size: 40rem;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .large .price {
+        font-size: 60rem;
+    }
+
+    .large .discont {
+        font-size: 36rem;
+    }
+}
+
+@media screen and (max-width: 896px) {
+
+    .large .price {
+        font-size: 54rem;
+    }
+
+    .large .discont {
+        font-size: 32rem;
+    }
+}
