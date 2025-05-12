@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
@@ -10,10 +10,9 @@ import Counter from '../../shared/components/Counter/Counter';
 import Button from '../../shared/components/Button/Button';
 import PriceBox from '../../shared/components/PriceBox/PriceBox';
 
-import useFetch from '../../shared/hooks/useFetch';
-
-import { getProductById } from '../../shared/api/products-api';
+import { getProductsAll, getProductById } from '../../shared/api/products-api';
 import { localUrl } from '../../shared/api/backendInstance';
+import { slugify } from '../../shared/utils/slugify'
 import { addToCart } from '../../redux/cart/cart-slice';
 
 import styles from './SingleProduct.module.css';
@@ -21,18 +20,46 @@ import styles from './SingleProduct.module.css';
 const SingleProduct = () => {
 
     const [count, setCount] = useState(1);
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const dispatch = useDispatch();
     const { id: slug } = useParams();
-    const productId = slug.split('-')[0];
+    const navigate = useNavigate();
 
-    const request = useCallback(() => getProductById(productId), [productId]);
-    const { data: productData, loading, error } = useFetch({
-        request,
-        initialData: [],
-    });
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                setLoading(true);
 
-    const product = productData[0];
+                const { data: productsAll, error: errorProductsAll } = await getProductsAll();
+                if (errorProductsAll) {
+                    return setError(errorProductsAll.message);
+                }
+                const producItem = productsAll.find(
+                    item => slugify(item.title) === slug.toLowerCase()
+                );
+                if (!producItem) {
+                    navigate('/not-found');
+                    return;
+                }
+
+                // Отримуємо товар по id
+                const { data: productData, error: errorProduct } = await getProductById(producItem.id);
+                if (errorProduct) {
+                    return setError(errorProduct.message);
+                }
+                setProduct(productData[0])
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [navigate, slug])
 
     const onAddProductToCart = (payload) => {
         dispatch(addToCart(payload));
@@ -89,14 +116,11 @@ const SingleProduct = () => {
                                     />
                                 </div>
                             </div>
-
                             <div className={styles.descriptionsTextContainer}>
                                 <p className={styles.descriptions}>Description</p>
                                 <p className={styles.descriptionsText}>{product.description}</p>
                             </div>
-
                         </div>
-
                     </div>
                 </>
             }

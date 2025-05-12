@@ -27,10 +27,10 @@ const ProductCard = ({ item }) => {
             </div>
 
             <div className={styles.boxContent}>
-                <Link to={`/products/${item.id}-${slug}`} className={styles.link}>
+                <Link to={`/products/${slug}`} className={styles.link}>
                     <p className={styles.title}>{item.title}</p>
                 </Link>
-                
+
                 <PriceBox
                     discont_price={item.discont_price}
                     price={item.price}

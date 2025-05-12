@@ -21,7 +21,7 @@ const CartListItem = ({ item, onIncreaseCart, onDecreaseCart, onDeleteFromCart }
             </div>
             <div className={styles.descriptionsContainer}>
                 <div className={styles.titleContainer}>
-                    <Link to={`/products/${item.id}-${slug}`} className={styles.link}>
+                    <Link to={`/products/${slug}`} className={styles.link}>
                         <p className={styles.title}>{item.title}</p>
                     </Link>
                     <RemoveIcon onClick={() => onDeleteFromCart(item.id)} />
