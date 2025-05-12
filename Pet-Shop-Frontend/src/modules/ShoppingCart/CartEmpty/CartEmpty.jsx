@@ -8,7 +8,7 @@ const CartEmpty = () => {
     return (
         <div>
             <p className={styles.text}>Looks like you have no items in your basket currently.</p>
-            <Link to='/categories'>
+            <Link to='/products'>
                 <Button text='Continue Shopping' />
             </Link>
         </div>

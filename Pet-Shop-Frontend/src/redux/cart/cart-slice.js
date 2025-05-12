@@ -30,6 +30,8 @@ const cartSlice = createSlice({
 
         deleteFromCart: (store, { payload }) =>
             store.filter((item) => item.id !== payload),
+
+        clearCart: () => [],
     }
 });
 
@@ -38,6 +40,7 @@ export const {
     increaseCountInCart,
     decreaseCountInCart,
     deleteFromCart,
+    clearCart
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,0 +1,25 @@
+.textField {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16rem 32rem;
+    width: 100%;
+
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--main-text-color);
+}
+
+.textField::placeholder {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--light-text-color);
+}
+
+.textFieldError {
+    width: 100%;
+    color: red;
+    font-size: 18rem;
+    margin: 14rem 0;
+}

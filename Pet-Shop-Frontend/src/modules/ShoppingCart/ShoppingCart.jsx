@@ -6,6 +6,7 @@ import ModuleTitle from '../../shared/components/ModuleTitle/ModuleTitle';
 
 import CartEmpty from './CartEmpty/CartEmpty';
 import CartListItem from './CartListItem/CartListItem';
+import Order from './Order/Order';
 
 import { selectCart } from '../../redux/cart/cart-selectors';
 import { increaseCountInCart, decreaseCountInCart, deleteFromCart } from '../../redux/cart/cart-slice';
@@ -53,17 +54,16 @@ const ShoppingCart = () => {
             <ModuleTitle
                 text='Shopping cart'
                 name='Back to the store'
-                to='/categories'
+                to='/products'
             />
-            {items.length === 0 && <CartEmpty />}
-
-            {items &&
+            {items.length === 0 ?
+                <CartEmpty /> :
                 <div className={styles.cartContainer}>
                     <div className={styles.cartBox}>
                         <ul className={styles.shoppingCart}>{elements}</ul>
                     </div>
                     <div className={styles.orederBox}>
-
+                        <Order />
                     </div>
                 </div>
             }

@@ -1,0 +1,17 @@
+.orderForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32rem;
+}
+
+.textFieldsBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+}
+
+.btnBox {
+    width: 100%;
+}
