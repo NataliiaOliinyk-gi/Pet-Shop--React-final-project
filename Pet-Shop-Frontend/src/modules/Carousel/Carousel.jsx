@@ -24,10 +24,11 @@ const Carousel = ({ data, loading, error, to, name }) => {
 
         return (
             <SwiperSlide>
-                <Link to={`${to}/${slug}`} key={item.id} className={styles.link}>
-                    {(name === 'All categories') ?
-                        (<CategorieCard item={item} />) : (<ProductCard item={item} />)}
-                </Link>
+                {(name === 'All categories') ?
+                    (<Link to={`${to}/${slug}`} key={item.id} className={styles.link}>
+                        <CategorieCard item={item} />
+                    </Link>) : <ProductCard key={item.id} item={item} />
+                }
             </SwiperSlide>
 
         )
@@ -38,7 +39,6 @@ const Carousel = ({ data, loading, error, to, name }) => {
             <Swiper
                 spaceBetween={32}
                 slidesPerView={4}
-                scrollbar={{ hide: true }}
                 modules={[Pagination, Autoplay]}
                 autoplay={{
                     delay: 2000,
