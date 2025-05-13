@@ -1,7 +1,7 @@
 .field {
     width: 112px;
     height: 36px;
-    border: 1px solid var(--light-color);
+    border: 1px solid var(--light-border-color);
     border-radius: 6px;
     padding: 8px 16px;
     outline: none;
@@ -9,7 +9,7 @@
     font-size: 16rem;
     font-weight: 500;
     line-height: 126%;
-    color: var(--light-text-color);
+    color: var(--main-text-color);
 }
 
 .field::placeholder {

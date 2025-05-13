@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import useProductsFilters from '../../../../hooks/useProductsFilters';
 
 import optionsSorted from './options';
 
@@ -9,13 +11,26 @@ const CustomSelect = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setselected] = useState(optionsSorted[0]);
 
+    const { searchParams, setSearchParams, sort } = useProductsFilters();
+
+    useEffect(() => {
+        if (sort) {
+            const found = optionsSorted.find(option => option.value === sort);
+            if (found) {
+                setselected(found);
+            }
+        }
+    }, [sort]);
+
     const toggleDropdown = () => {
         setIsOpen(prev => !prev);
     };
 
     const handleSelected = (option) => {
-        // setIsOpen(false);
         setselected(option);
+
+        searchParams.set("sort", option.value);
+        setSearchParams(searchParams);
     };
 
     const elements = optionsSorted.map((item) => (

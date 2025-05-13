@@ -6,5 +6,8 @@ export const selectTotalCartItems = store => {
 };
 
 export const selectTotalCartPrice = store => {
-    return store.cart.reduce((acum, item) => acum + item.count * item.price, 0).toFixed(2);
+    return store.cart.reduce((acum, item) => {
+        const price = item.discont_price ?? item.price;
+        return acum + item.count * price
+    }, 0).toFixed(2);
 };

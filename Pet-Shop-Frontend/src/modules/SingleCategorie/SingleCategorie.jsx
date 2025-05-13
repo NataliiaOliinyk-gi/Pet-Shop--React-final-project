@@ -9,6 +9,7 @@ import Filters from '../../shared/components/Filters/Filters';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
 import useFetch from '../../shared/hooks/useFetch';
+import useProductsFilters from '../../shared/hooks/useProductsFilters';
 
 import { getCategorieById } from '../../shared/api/categories-api';
 import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
@@ -21,6 +22,8 @@ const SingleCategorie = () => {
     const { categories, loading: categoriesLoading, error: categoriesError } = useSelector(selectCategoriesAll);
     const { id: slug } = useParams();
     const navigate = useNavigate();
+
+    const { getFilteredProducts } = useProductsFilters();
 
     const categoryItem = categories.find(
         item => slugify(item.title) === slug.toLowerCase()
@@ -44,13 +47,6 @@ const SingleCategorie = () => {
         }
     }, [categoryItem, categoriesLoading, categories.length, navigate]);
 
-    if (categoriesLoading) {
-        return <Loader loading={true} />;
-    }
-    if (!categories.length) {
-        return <LoadingError>{categoriesError}</LoadingError>;
-    }
-
     if (!categoryItem) {
         return null; // поки navigate ще не зробив редирект
     }
@@ -58,9 +54,11 @@ const SingleCategorie = () => {
     const categorie = categoryData?.category?.title || '';
     const productsCategory = categoryData?.data || [];
 
-    const elements = productsCategory.map(item => (
+    const filteredProducts = getFilteredProducts(productsCategory);
+
+    const elements = filteredProducts.map(item => (
         <ProductCard key={item.id} item={item} />
-    ))
+    ));
 
     return (
 
@@ -68,7 +66,9 @@ const SingleCategorie = () => {
             title={categorie}
             showBreadcrumbs>
             <Filters />
+            <Loader loading={categoriesLoading} />
             <Loader loading={loading} />
+            {categoriesError && <LoadingError>{categoriesError}</LoadingError>}
             {error && <LoadingError>{error}</LoadingError>}
             <ul className={styles.categoriesBox}>
                 {elements}

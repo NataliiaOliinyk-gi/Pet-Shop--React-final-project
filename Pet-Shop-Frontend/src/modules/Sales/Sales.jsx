@@ -6,6 +6,7 @@ import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
 import useFetch from '../../shared/hooks/useFetch';
+import useProductsFilters from '../../shared/hooks/useProductsFilters';
 
 import { getProductsAll } from '../../shared/api/products-api';
 
@@ -18,15 +19,18 @@ const Sales = () => {
         initialData: [],
     });
 
-    const sales = products.filter(item => item.discont_price)
+    const sales = products.filter(item => item.discont_price);
 
-    const elements = sales.map(item => (
+    const { getFilteredProducts } = useProductsFilters();
+    const filteredProducts = getFilteredProducts(sales);
+
+    const elements = filteredProducts.map(item => (
         <ProductCard key={item.id} item={item} />
     ))
 
     return (
         <SectionLayout title="Discounted items" showBreadcrumbs>
-            <Filters showDiscounted={false}/>
+            <Filters showDiscounted={false} />
             <Loader loading={loading} />
             {error && <LoadingError>{error}</LoadingError>}
             <ul className={styles.container}>

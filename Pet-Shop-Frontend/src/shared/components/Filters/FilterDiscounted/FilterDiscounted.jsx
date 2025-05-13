@@ -1,16 +1,35 @@
 import { useId } from 'react';
 
+import useProductsFilters from '../../../hooks/useProductsFilters';
+
 import styles from './FilterDiscounted.module.css';
 import shared from '../../../styles/modules/sharedFilters.module.css';
 
 const FilterDiscounted = () => {
     const checkId = useId();
 
+    const { searchParams, setSearchParams, discount } = useProductsFilters();
+
+    const handleChange = () => {
+        if (discount) {
+            searchParams.delete("discount");
+        } else {
+            searchParams.set("discount", "true");
+        }
+        setSearchParams(searchParams);
+    };
+
     return (
         <div className={shared.filtersBox}>
             <label htmlFor={checkId} className={shared.filtersLabel}>Discounted items</label>
             <label className={styles.customCheckbox}>
-                <input type="checkbox" id={checkId} className={styles.checkboxInput} />
+                <input
+                    type="checkbox"
+                    id={checkId}
+                    checked={discount}
+                    onChange={handleChange}
+                    className={styles.checkboxInput}
+                />
                 <span className={styles.checkboxBox}>
                     {/* SVG бордера */}
                     <svg

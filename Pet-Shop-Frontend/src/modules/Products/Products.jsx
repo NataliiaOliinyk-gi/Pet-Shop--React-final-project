@@ -6,9 +6,9 @@ import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
 import useFetch from '../../shared/hooks/useFetch';
+import useProductsFilters from "../../shared/hooks/useProductsFilters";
 
 import { getProductsAll } from '../../shared/api/products-api';
-
 
 import styles from './Products.module.css';
 
@@ -19,9 +19,12 @@ const Products = () => {
         initialData: [],
     });
 
-    const elements = products.map(item => (
+    const { getFilteredProducts } = useProductsFilters();
+    const filteredProducts = getFilteredProducts(products);
+
+    const elements = filteredProducts.map(item => (
         <ProductCard key={item.id} item={item} />
-    ))
+    ));
 
     return (
         <SectionLayout title="All products" showBreadcrumbs>
