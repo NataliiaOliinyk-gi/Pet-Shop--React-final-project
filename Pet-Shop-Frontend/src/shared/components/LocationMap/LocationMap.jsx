@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, memo, useRef } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
+import Loader from '../Loader/Loader';
+
 
 const containerStyle = {
     width: '100%',
@@ -105,7 +107,8 @@ const LocationMap = ({ address }) => {
 
                     </div>
                 ) : (
-                    <p>Loading map...</p>
+                    // <p>Loading map...</p>
+                    <Loader />
                 )
             }
         </>
