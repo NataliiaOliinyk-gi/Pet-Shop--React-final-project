@@ -1,5 +1,5 @@
 .textField {
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-border-color);
     border-radius: 6px;
     padding: 16rem 32rem;
     width: 100%;
@@ -17,9 +17,24 @@
     color: var(--light-text-color);
 }
 
+.textField:focus {
+    border-color: var(--dark-border-color);
+    outline: none; 
+}
+
 .textFieldError {
     width: 100%;
     color: red;
     font-size: 18rem;
     margin: 14rem 0;
+}
+
+.textFieldWhite {
+    border-color: var(--white-border-color);
+    background-color: transparent;
+    color: var(--white-text-color);
+}
+
+.textFieldWhite::placeholder {
+    color: var(--white-text-color);
 }

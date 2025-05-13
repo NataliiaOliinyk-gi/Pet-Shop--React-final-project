@@ -1,7 +1,6 @@
 .btn {
     border-radius: 6px;
     padding: 16rem 56rem;
-    background-color: var(--main-background-color);
     border: none;
     cursor: pointer;
 
@@ -9,20 +8,46 @@
     font-weight: 600;
     line-height: 130%;
     text-align: center;
-    color: var(--white-color);
     white-space: nowrap;
 
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.btn:hover {
-    background-color: var(--second-background-color);
+.btnPrimary {
+    background-color: var(--main-background-color);
+    color: var(--white-text-color);
 }
 
-.btn:active {
+.btnWhite {
+    background-color: var(--white-background-color);
+    color: var(--main-text-color);
+}
+
+.btn:hover {
+    background-color: var(--second-background-color);
+    color: var(--white-text-color);
+}
+
+.btnPrimary:active {
     border: 1px solid var(--second-background-color);
     background-color: var(--white-background-color);
     color: var(--main-text-color);
+}
+
+.btnWhite:active {
+    background-color: var(--white-background-color);
+    color: var(--second-text-color);
+}
+
+.btnPrimary.submitted {
+    border: 1px solid var(--second-background-color);
+    background-color: var(--white-background-color);
+    color: var(--main-text-color);
+}
+
+.btnWhite.submitted {
+    background-color: var(--white-background-color);
+    color: var(--second-text-color);
 }
 
 @media screen and (max-width: 820px) {
@@ -32,14 +57,6 @@
         font-size: 18rem;
     }
 }
-
-/* @media screen and (max-width: 768px) {
-
-    .btn {
-        padding: 14rem 48rem;
-        font-size: 18rem;
-    }
-} */
 
 @media screen and (max-width: 540px) {
 

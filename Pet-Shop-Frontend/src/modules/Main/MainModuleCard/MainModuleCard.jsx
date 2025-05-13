@@ -8,7 +8,6 @@ import styles from './MainModuleCard.module.css';
 const MainModuleCard = ({ text, name, to, data, loading, error }) => {
 
     return (
-        <div>
             <SectionLayout>
                 <ModuleTitle
                     text={text}
@@ -16,8 +15,7 @@ const MainModuleCard = ({ text, name, to, data, loading, error }) => {
                     to={to}
                 />
                 <Carousel data={data} loading={loading} error={error} to={to} name={name} />
-            </SectionLayout>
-        </div>
+            </SectionLayout> 
     )
 };
 

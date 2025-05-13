@@ -111,6 +111,7 @@ const SingleProduct = () => {
                                 <div className={styles.btnBox}>
                                     <Button
                                         text="Add to cart"
+                                        activeText="Added"
                                         width="100%"
                                         onClick={() => onAddProductToCart({ ...product, count })}
                                     />

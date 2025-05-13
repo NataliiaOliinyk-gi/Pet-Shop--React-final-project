@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import Banner from '../Banner/Banner';
+import DiscountForm from '../DiscountForm/DiscountForm';
 
 import MainModuleCard from './MainModuleCard/MainModuleCard';
 
@@ -24,8 +25,9 @@ const Main = () => {
 
 
     return (
-        <section>
+        <main className={styles.container}>
             <Banner text="Amazing Discounts on Pets Products!" />
+            
             <MainModuleCard
                 text="Categories"
                 to='/categories'
@@ -34,6 +36,8 @@ const Main = () => {
                 loading={loadingCategories}
                 error={errorCategories} />
 
+            <DiscountForm />
+
             <MainModuleCard
                 text="Sale"
                 to='/sales'
@@ -41,7 +45,7 @@ const Main = () => {
                 data={sales}
                 loading={loadingSale}
                 error={errorSale} />
-        </section>
+        </main>
     )
 };
 

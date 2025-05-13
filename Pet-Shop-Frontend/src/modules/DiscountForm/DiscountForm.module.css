@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    margin: 66rem 0 0 40rem;
+}
+
+.discountFormContainer {
+    background: linear-gradient(220deg, var(--gradient-left) 0%, var(--gradient-right) 100%);
+    border-radius: 12px;
+    padding: 32rem 32rem 0 32rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.title {
+    font-size: 64rem;
+    font-weight: 700;
+    line-height: 110%;
+    text-align: center;
+    color: var(--white-text-color);
+}
+
+.formContainer {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.images {
+    background-image: url("../../assets/images/discount.png");
+    width: 783rem;
+    height: 360rem;
+}
+
+.formBox {
+    padding: 32rem;
+    flex: 1;
+}

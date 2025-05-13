@@ -6,7 +6,7 @@ import LoadingError from '../../../shared/components/LoadingError/LoadingError';
 import Modal from '../../../shared/components/Modal/Modal';
 
 import OrderTitle from './OrderTitle/OrderTitle';
-import OrderForm from './OrderForm/OrderForm';
+import Form from '../../../shared/components/Form/Form';
 
 import { selectCart, selectTotalCartItems, selectTotalCartPrice } from '../../../redux/cart/cart-selectors';
 import { clearCart } from '../../../redux/cart/cart-slice';
@@ -51,7 +51,7 @@ const Order = () => {
     return (
         <div className={styles.orderContainer}>
             <OrderTitle count={totalCount} sum={totalPrice} />
-            <OrderForm submitForm={submitForm} />
+            <Form submitForm={submitForm} text="Order" activeText="The Order is Placed"/>
             <Loader loading={loading} />
             {error && <LoadingError>{error}</LoadingError>}
             {showModal && (

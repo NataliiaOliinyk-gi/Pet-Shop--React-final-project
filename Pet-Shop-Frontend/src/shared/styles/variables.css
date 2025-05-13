@@ -9,7 +9,12 @@
     --hover-background-color: #f1f3f4;
     --white-background-color: #fff;
 
+    --dark-border-color: #8b8b8b;
     --light-border-color: #ddd;
+    --white-border-color: #fff;
+
+    --gradient-left: #2451C6;
+    --gradient-right: #0D50FF;
 
     --main-color: #282828;
     --light-color: #ddd;

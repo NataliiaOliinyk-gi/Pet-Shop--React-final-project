@@ -25,22 +25,22 @@ const ProductCard = ({ item }) => {
             <div className={styles.imageBox}>
                 <img src={`${localUrl}${item.image}`} alt={item.title} className={`img-fluid ${styles.image}`} />
             </div>
-
             <div className={styles.boxContent}>
                 <Link to={`/products/${slug}`} className={styles.link}>
                     <p className={styles.title}>{item.title}</p>
                 </Link>
-
                 <PriceBox
                     discont_price={item.discont_price}
                     price={item.price}
                 />
             </div>
-
             <div className={styles.addToCartBtnBox}>
-                <Button text="Add to cart" width="100%" onClick={() => onAddProductToCart(item)} />
+                <Button
+                    text="Add to cart"
+                    activeText="Added"
+                    width="100%"
+                    onClick={() => onAddProductToCart(item)} />
             </div>
-
             {item.discont_price &&
                 <div className={styles.discountBadgeBox}>
                     <DiscountBadge price={item.price} discont_price={item.discont_price} />
