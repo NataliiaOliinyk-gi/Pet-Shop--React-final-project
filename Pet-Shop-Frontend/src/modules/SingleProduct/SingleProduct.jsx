@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
 import Loader from '../../shared/components/Loader/Loader';
@@ -14,6 +14,7 @@ import { getProductsAll, getProductById } from '../../shared/api/products-api';
 import { localUrl } from '../../shared/api/backendInstance';
 import { slugify } from '../../shared/utils/slugify'
 import { addToCart } from '../../redux/cart/cart-slice';
+import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 
 import styles from './SingleProduct.module.css';
 
@@ -27,6 +28,7 @@ const SingleProduct = () => {
     const dispatch = useDispatch();
     const { id: slug } = useParams();
     const navigate = useNavigate();
+    const { categories } = useSelector(selectCategoriesAll);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,7 +61,7 @@ const SingleProduct = () => {
         };
 
         fetchData();
-    }, [navigate, slug])
+    }, [navigate, slug]);
 
     const onAddProductToCart = (payload) => {
         dispatch(addToCart(payload));
@@ -73,8 +75,17 @@ const SingleProduct = () => {
         setCount(prev => (prev > 1 ? prev - 1 : 1));
     };
 
+    const category = categories.find(item => item.id === product.categoryId);
+    const breadcrumbsPath = product && category ? [
+        { name: 'Main page', to: '/' },
+        { name: "Categories", to: "/categories" },
+        { name: category.title, to: `/categories/${slugify(category.title)}` },
+        { name: product.title, to: `/products/${slug}` },
+    ] : null;
+
+
     return (
-        <SectionLayout showBreadcrumbs>
+        <SectionLayout showBreadcrumbs path={breadcrumbsPath}>
 
             <Loader loading={loading} />
             {error && <LoadingError>{error}</LoadingError>}

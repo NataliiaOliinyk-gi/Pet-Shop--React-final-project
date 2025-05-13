@@ -4,11 +4,11 @@ import Title from '../Title/Title';
 
 import styles from './SectionLayout.module.css';
 
-const SectionLayout = ({ children, title, showBreadcrumbs = false }) => {
+const SectionLayout = ({ children, title, showBreadcrumbs = false, path }) => {
     return (
         <section className={styles.wrapper}>
             <div className={styles.container}>
-                {showBreadcrumbs && <Breadcrumbs />}
+                {showBreadcrumbs && <Breadcrumbs path={path} />}
                 {title && <Title text={title} />}
                 {children}
             </div>
