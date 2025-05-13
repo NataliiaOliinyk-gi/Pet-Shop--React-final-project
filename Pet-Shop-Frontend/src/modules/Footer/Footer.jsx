@@ -46,9 +46,6 @@ const Footer = () => {
                     <div className={styles.box}>
                         {elements}
                     </div>
-                    {/* <div>
-                        <img className={styles.map} src="../../src/assets/images/map.png" alt="Map" />
-                    </div> */}
                     <div className={styles.map}>
                         <LocationMap address={address} />
                     </div>

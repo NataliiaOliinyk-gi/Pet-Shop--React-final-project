@@ -32,7 +32,7 @@ const LocationMap = ({ address }) => {
         const geocoder = new window.google.maps.Geocoder();
         geocoder.geocode({ address }, (results, status) => {
             if (status === 'OK' && results[0]) {
-                const location = results[0].geometry.location;
+                const { location } = results[0].geometry;
                 setCenter({
                     lat: location.lat(),
                     lng: location.lng(),
@@ -87,10 +87,7 @@ const LocationMap = ({ address }) => {
                                 mapId: 'ba0e6088b35bf1d52bcedee2'
                             }}
                         >
-
                             <Marker position={center} />
-                            {/* AdvancedMarker додається вручну через useEffect */}
-
                         </GoogleMap>
 
                         {/* Рендеримо маркерний DOM-елемент поза картою */}
