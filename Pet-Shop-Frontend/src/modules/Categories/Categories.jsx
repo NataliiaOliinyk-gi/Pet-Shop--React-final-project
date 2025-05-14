@@ -7,32 +7,14 @@ import LoadingError from '../../shared/components/LoadingError/LoadingError';
 
 import CategorieCard from './CategorieCard/CategorieCard';
 
-// import useFetch from '../../shared/hooks/useFetch';
-
-// import { getCategoriesAllApi } from '../../shared/api/categories-api';
 import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 import { slugify } from '../../shared/utils/slugify';
 
 import styles from './Categories.module.css';
 
-
 const Categories = () => {
 
     const { categories, loading, error } = useSelector(selectCategoriesAll);
-
-    // const { data: categories, loading, error } = useFetch({
-    //     request: getCategoriesAllApi,
-    //     initialData: [],
-    // });
-
-    // const elements = categories.map(item => {
-    //     const slug = slugify(item.title);
-    //     return (
-    //         <Link to={`/categories/${item.id}-${slug}`} key={item.id} className={styles.link}>
-    //             <CategorieCard item={item} />
-    //         </Link>
-    //     )
-    // });
 
     const elements = categories.map(item => {
         const slug = slugify(item.title);

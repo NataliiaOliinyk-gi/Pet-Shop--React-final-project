@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 
 import Button from '../Button/Button';
 import DiscountBadge from '../DiscountBadge/DiscountBadge';
@@ -16,9 +17,9 @@ const ProductCard = ({ item }) => {
     const slug = slugify(item.title);
     const dispatch = useDispatch();
 
-    const onAddProductToCart = (payload) => {
+    const onAddProductToCart = useCallback(((payload) => {
         dispatch(addToCart(payload));
-    };
+    }), [dispatch]);
 
     return (
         <li className={styles.card}>

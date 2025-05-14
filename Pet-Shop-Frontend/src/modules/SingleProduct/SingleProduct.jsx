@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -63,17 +63,17 @@ const SingleProduct = () => {
         fetchData();
     }, [navigate, slug]);
 
-    const onAddProductToCart = (payload) => {
+    const onAddProductToCart = useCallback(((payload) => {
         dispatch(addToCart(payload));
-    };
+    }), [dispatch]);
 
-    const onPlus = () => {
+    const onPlus = useCallback((() => {
         setCount(prev => prev + 1)
-    };
+    }), [setCount]);
 
-    const onMinus = () => {
+    const onMinus = useCallback((() => {
         setCount(prev => (prev > 1 ? prev - 1 : 1));
-    };
+    }), []);
 
     const category = categories.find(item => item.id === product.categoryId);
     const breadcrumbsPath = product && category ? [
@@ -82,7 +82,6 @@ const SingleProduct = () => {
         { name: category.title, to: `/categories/${slugify(category.title)}` },
         { name: product.title, to: `/products/${slug}` },
     ] : null;
-
 
     return (
         <SectionLayout showBreadcrumbs path={breadcrumbsPath}>

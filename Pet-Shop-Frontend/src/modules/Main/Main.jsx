@@ -21,13 +21,14 @@ const Main = () => {
         initialData: [],
     });
 
-    const sales = products.filter(item => item.discont_price)
-
+    const sales = products
+        .filter(item => item.discont_price)
+        .slice(0, 8);
 
     return (
         <main className={styles.container}>
-            <Banner text="Amazing Discounts on Pets Products!" />
-            
+            <Banner text="Amazing Discounts on Pets Products!" />
+
             <MainModuleCard
                 text="Categories"
                 to='/categories'

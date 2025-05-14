@@ -1,15 +1,9 @@
 import axios from "axios";
 
-export const categoriesInstance = axios.create({
-    baseURL: "http://localhost:3333/categories"
+const { VITE_API_URL } = import.meta.env
+
+export const backendInstance = axios.create({
+    baseURL: VITE_API_URL
 });
 
-export const productsInstance = axios.create({
-    baseURL: "http://localhost:3333/products"
-});
-
-export const postInstance = axios.create({
-    baseURL: "http://localhost:3333"
-});
-
-export const localUrl = "http://localhost:3333";
+export const localUrl = VITE_API_URL;
