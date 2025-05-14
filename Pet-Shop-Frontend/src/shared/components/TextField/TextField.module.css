@@ -8,6 +8,8 @@
     font-weight: 500;
     line-height: 130%;
     color: var(--main-text-color);
+
+    transition: ease-in-out 500ms;
 }
 
 .textField::placeholder {
@@ -19,7 +21,11 @@
 
 .textField:focus {
     border-color: var(--dark-border-color);
-    outline: none; 
+    outline: none;
+}
+
+.textField:hover {
+    background-color: var(--hover-background-color);
 }
 
 .textFieldError {
@@ -37,4 +43,8 @@
 
 .textFieldWhite::placeholder {
     color: var(--white-text-color);
+}
+
+.textFieldWhite:hover {
+    background-color: var(--discount-background-color);
 }

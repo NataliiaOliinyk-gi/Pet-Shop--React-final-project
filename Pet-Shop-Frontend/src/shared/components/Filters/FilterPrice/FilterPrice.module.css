@@ -10,6 +10,12 @@
     font-weight: 500;
     line-height: 126%;
     color: var(--main-text-color);
+
+    transition: ease-in-out 500ms;
+}
+
+.field:hover{
+    background-color: var(--hover-background-color);
 }
 
 .field::placeholder {

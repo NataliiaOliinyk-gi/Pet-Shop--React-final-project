@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 50rem;
+    gap: 20rem;
 }
 
 .totalCountBox {
@@ -30,6 +30,7 @@
     font-weight: 500;
     line-height: 130%;
     color: var(--light-text-color);
+    white-space: nowrap;
 }
 
 .totalPrice {

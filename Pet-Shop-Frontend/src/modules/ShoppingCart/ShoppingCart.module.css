@@ -6,9 +6,12 @@
 
 .cartBox {
     padding-bottom: 10rem;
+    flex: 1;
 }
 
-/* .orederBox {} */
+.orederBox {
+    width: 548rem;
+}
 
 .shoppingCart {
     width: 100%;

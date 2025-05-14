@@ -3,6 +3,12 @@
     flex-direction: column;
     align-items: center;
     gap: 16rem;
+
+    transition: ease-in-out 500ms;
+}
+
+.card:hover {
+    transform: scale(0.9);
 }
 
 .imageBox {

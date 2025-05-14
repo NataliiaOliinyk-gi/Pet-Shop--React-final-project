@@ -9,5 +9,6 @@ export const selectTotalCartPrice = store => {
     return store.cart.reduce((acum, item) => {
         const price = item.discont_price ?? item.price;
         return acum + item.count * price
-    }, 0).toFixed(2);
+    }, 0)
+        .toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 };

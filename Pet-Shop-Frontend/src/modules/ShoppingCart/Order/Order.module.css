@@ -7,10 +7,3 @@
     gap: 32rem;
     padding: 32rem;
 }
-
-.success {
-    font-size: 40rem;
-    font-weight: 500;
-    line-height: 130%;
-    color: green;
-}

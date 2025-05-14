@@ -16,9 +16,11 @@ const CartListItem = ({ item, onIncreaseCart, onDecreaseCart, onDeleteFromCart }
 
     return (
         <li className={styles.cartItemContainer}>
-            <div className={styles.imageContainer}
-                style={{ backgroundImage: `url(${localUrl}${item.image})` }}>
-            </div>
+            <Link to={`/products/${slug}`} className={styles.link}>
+                <div className={styles.imageContainer}
+                    style={{ backgroundImage: `url(${localUrl}${item.image})` }}>
+                </div>
+            </Link>
             <div className={styles.descriptionsContainer}>
                 <div className={styles.titleContainer}>
                     <Link to={`/products/${slug}`} className={styles.link}>

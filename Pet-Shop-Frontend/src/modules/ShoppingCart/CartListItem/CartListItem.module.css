@@ -6,6 +6,13 @@
     display: flex;
     gap: 32rem;
     justify-content: space-between;
+
+    transition: ease-in-out 500ms;
+}
+
+.cartItemContainer:hover {
+    box-shadow: 0 0 10px 0.1px #dddddd;
+    transform: scale(0.95);
 }
 
 .imageContainer {

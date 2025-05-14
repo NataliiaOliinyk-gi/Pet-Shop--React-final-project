@@ -1,5 +1,10 @@
 .baketBox {
     position: relative;
+    transition: ease-in-out 500ms;
+}
+
+.baketBox:hover {
+    transform: scale(1.1);
 }
 
 .baket {

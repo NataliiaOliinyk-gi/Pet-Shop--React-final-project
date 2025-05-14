@@ -66,12 +66,18 @@
 .socialIcons {
     display: flex;
     gap: 16rem;
+
 }
 
 .iconImg {
     width: 44rem;
     height: 44rem;
     object-fit: contain;
+    transition: ease-in-out 500ms;
+}
+
+.iconImg:hover {
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 1180px) {
