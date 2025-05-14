@@ -1,8 +1,8 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -19,24 +19,32 @@ import styles from './Carousel.module.css';
 
 const Carousel = ({ data, loading, error, to, name }) => {
 
+    const swiperRef = useRef(null);
+
     const elements = data.map(item => {
         const slug = slugify(item.title)
 
         return (
-            <SwiperSlide>
+            <SwiperSlide
+                key={item.id}
+                onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+                onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+            >
+
                 {(name === 'All categories') ?
-                    (<Link to={`${to}/${slug}`} key={item.id} className={styles.link}>
+                    (<Link to={`${to}/${slug}`} className={styles.link}>
                         <CategorieCard item={item} />
-                    </Link>) : <ProductCard key={item.id} item={item} />
+                    </Link>) : <ProductCard item={item} />
                 }
             </SwiperSlide>
-
         )
     });
 
     return (
         <div>
             <Swiper
+                ref={swiperRef}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
                 spaceBetween={32}
                 slidesPerView={4}
                 modules={[Pagination, Autoplay]}
