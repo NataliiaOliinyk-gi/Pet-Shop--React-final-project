@@ -12,7 +12,7 @@
     gap: 40rem;
 }
 
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 1400px) {
 
     .wrapper {
         margin: 0 40rem;

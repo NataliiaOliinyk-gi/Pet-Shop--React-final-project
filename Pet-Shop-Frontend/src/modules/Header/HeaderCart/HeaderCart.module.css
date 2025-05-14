@@ -49,4 +49,10 @@
         width: 28px;
         height: 28px;
     }
+
+    .count {
+        width: 23rem;
+        height: 23rem;
+        font-size: 11rem;
+    }
 }

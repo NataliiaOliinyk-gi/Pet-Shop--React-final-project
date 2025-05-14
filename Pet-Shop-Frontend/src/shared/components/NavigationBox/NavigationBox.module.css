@@ -36,7 +36,15 @@
     border: 1px solid var(--light-color);
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 960px) {
+
+    .link,
+    .current {
+        margin: 8rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
 
     .link,
     .current {
@@ -62,6 +70,11 @@
 
     .link,
     .current {
+        height: 34rem;
         font-size: 14rem;
+    }
+
+    .separator {
+        width: 15rem;
     }
 }

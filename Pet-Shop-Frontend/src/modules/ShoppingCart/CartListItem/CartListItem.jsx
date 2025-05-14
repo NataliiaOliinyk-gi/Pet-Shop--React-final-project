@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Counter from '../../../shared/components/Counter/Counter';
 import PriceBox from '../../../shared/components/PriceBox/PriceBox';
-import RemoveIcon from '../../../shared/components/Icons/RemoveIcon';
+import RemoveIcon from '../../../shared/components/Icons/RemoveIcon/RemoveIcon';
 
 import { localUrl } from '../../../shared/api/backendInstance';
 import { slugify } from '../../../shared/utils/slugify';

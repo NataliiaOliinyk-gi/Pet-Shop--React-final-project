@@ -32,7 +32,7 @@
     font-size: 40rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1124px) {
 
     .large .price {
         font-size: 60rem;
@@ -40,6 +40,10 @@
 
     .large .discont {
         font-size: 36rem;
+    }
+
+    .priceBox {
+        gap: 10rem;
     }
 }
 
@@ -51,5 +55,46 @@
 
     .large .discont {
         font-size: 32rem;
+    }
+
+    .price {
+        font-size: 35rem;
+    }
+
+    .discont {
+        font-size: 18rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .price {
+        font-size: 40rem;
+    }
+
+    .discont {
+        font-size: 20rem;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    .price {
+        font-size: 32rem;
+    }
+
+    .discont {
+        font-size: 20rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .price {
+        font-size: 28rem;
+    }
+
+    .discont {
+        font-size: 18rem;
     }
 }

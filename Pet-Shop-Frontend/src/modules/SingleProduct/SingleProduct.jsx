@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -29,6 +29,10 @@ const SingleProduct = () => {
     const { id: slug } = useParams();
     const navigate = useNavigate();
     const { categories } = useSelector(selectCategoriesAll);
+
+    const [showFullDescription, setShowFullDescription] = useState(false);
+    const descriptionRef = useRef(null);
+    const [isTruncated, setIsTruncated] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -63,6 +67,15 @@ const SingleProduct = () => {
         fetchData();
     }, [navigate, slug]);
 
+    // Перевірка чи текст обрізаний
+    useEffect(() => {
+        const el = descriptionRef.current;
+        if (el) {
+            const isOverflowing = el.scrollHeight > el.clientHeight;
+            setIsTruncated(isOverflowing);
+        }
+    }, [product.description]);
+
     const onAddProductToCart = useCallback(((payload) => {
         dispatch(addToCart(payload));
     }), [dispatch]);
@@ -78,6 +91,10 @@ const SingleProduct = () => {
     const onMinus = useCallback((() => {
         setCount(prev => (prev > 1 ? prev - 1 : 1));
     }), []);
+
+    const toggleDescription = () => {
+        setShowFullDescription(prev => !prev);
+    };
 
     const category = categories.find(item => item.id === product.categoryId);
     const breadcrumbsPath = product && category ? [
@@ -133,7 +150,16 @@ const SingleProduct = () => {
                             </div>
                             <div className={styles.descriptionsTextContainer}>
                                 <p className={styles.descriptions}>Description</p>
-                                <p className={styles.descriptionsText}>{product.description}</p>
+                                <p className={`${styles.descriptionsText} ${showFullDescription ? styles.expanded : ''}`}
+                                    ref={descriptionRef}
+                                >
+                                    {product.description}
+                                </p>
+                                {isTruncated && (
+                                    <button className={styles.readMoreBtn} onClick={toggleDescription}>
+                                        {showFullDescription ? 'Read less' : 'Read more'}
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -39,3 +39,57 @@
     line-height: 110%;
     color: var(--main-text-color);
 }
+
+@media screen and (max-width: 1280px) {
+    .title {
+        font-size: 36rem;
+    }
+
+    .totalPrice {
+        font-size: 60rem;
+    }
+
+    .totalCount {
+        font-size: 36rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .title {
+        font-size: 32rem;
+    }
+
+    .totalPrice {
+        font-size: 50rem;
+    }
+
+    .totalCount {
+        font-size: 30rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .totalPrice {
+        font-size: 50rem;
+    }
+
+    .totalCount {
+        font-size: 30rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .totalPrice {
+        font-size: 40rem;
+    }
+
+    .totalCount {
+        font-size: 20rem;
+    }
+
+    .title {
+        font-size: 32rem;
+    }
+}

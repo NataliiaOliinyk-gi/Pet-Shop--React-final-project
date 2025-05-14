@@ -69,6 +69,7 @@
 @media screen and (max-width: 420px) {
 
     .selectButton {
+        height: 36rem;
         gap: 12rem;
     }
 }

@@ -48,3 +48,11 @@
 .textFieldWhite:hover {
     background-color: var(--discount-background-color);
 }
+
+@media screen and (max-width: 430px) {
+
+    .textField {
+       font-size: 16rem;
+    }
+
+}

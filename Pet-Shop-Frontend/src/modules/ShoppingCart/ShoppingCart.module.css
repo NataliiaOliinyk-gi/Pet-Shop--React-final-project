@@ -1,6 +1,6 @@
 .cartContainer {
+    width: 100%;
     display: flex;
-    justify-content: center;
     gap: 32rem;
 }
 
@@ -18,4 +18,52 @@
     display: flex;
     flex-direction: column;
     gap: 16rem;
+}
+
+@media screen and (max-width: 1280px) {
+
+    .cartContainer {
+        gap: 20rem;
+    }
+
+    .orederBox {
+        width: 480rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+
+    .orederBox {
+        width: 430rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .cartContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cartBox {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .orederBox {
+        width: 100%;
+        max-width: 548rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .cartContainer {
+        gap: 20rem;
+    }
+
+    .orederBox {
+        width: 100%;
+        max-width: 420rem;
+    }
 }

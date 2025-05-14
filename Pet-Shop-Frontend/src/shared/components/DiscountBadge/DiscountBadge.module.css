@@ -21,3 +21,12 @@
         font-size: 20rem;
     }
 }
+
+@media screen and (max-width: 430px) {
+
+    .discountBadge {
+        padding: 4rem 8rem;
+        height: 28rem;
+        font-size: 16rem;
+    }
+}

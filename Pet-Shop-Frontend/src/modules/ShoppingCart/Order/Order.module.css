@@ -7,3 +7,35 @@
     gap: 32rem;
     padding: 32rem;
 }
+
+@media screen and (max-width: 1124px) {
+
+    .orderContainer {
+        gap: 20rem;
+        padding: 20rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .orderContainer {
+        gap: 30rem;
+        padding: 30rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .orderContainer {
+        gap: 24rem;
+        padding: 24rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .orderContainer {
+        gap: 16rem;
+        padding: 16rem;
+    }
+}
