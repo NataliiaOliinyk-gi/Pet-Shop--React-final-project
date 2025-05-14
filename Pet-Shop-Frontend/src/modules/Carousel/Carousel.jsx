@@ -52,6 +52,24 @@ const Carousel = ({ data, loading, error, to, name }) => {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
+                breakpoints={{
+                    1360: {
+                        slidesPerView: 4,
+                        spaceBetween: 32,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 32,
+                    },
+                    667: {
+                        slidesPerView: 2,
+                        spaceBetween: 24,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 16,
+                    },
+                }}
             >
                 {elements}
             </Swiper>
