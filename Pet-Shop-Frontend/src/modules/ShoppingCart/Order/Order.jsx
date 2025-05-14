@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Loader from '../../../shared/components/Loader/Loader';
@@ -28,7 +28,16 @@ const Order = () => {
 
     const dispatch = useDispatch();
 
-    const submitForm = async order => {
+    const toggleModal = useCallback(() => {
+        setShowModal(prev => !prev);
+    }, []);
+
+    const closeModal = useCallback(() => {
+        toggleModal();
+        dispatch(clearCart());
+    }, [toggleModal, dispatch]);
+
+    const submitForm = useCallback((async order => {
         const payload = { ...order, products: cartItems }
         setLoading(true)
         const { error } = await orderSendApi(payload);
@@ -37,21 +46,12 @@ const Order = () => {
             return setError(error.message);
         }
         toggleModal();
-    }
-
-    const closeModal = () => {
-        toggleModal();
-        dispatch(clearCart());
-    };
-
-    const toggleModal = () => {
-        setShowModal((prevState) => !prevState);
-    };
+    }), [toggleModal, cartItems]);
 
     return (
         <div className={styles.orderContainer}>
             <OrderTitle count={totalCount} sum={totalPrice} />
-            <Form submitForm={submitForm} text="Order" activeText="The Order is Placed"/>
+            <Form submitForm={submitForm} text="Order" activeText="The Order is Placed" />
             <Loader loading={loading} />
             {error && <LoadingError>{error}</LoadingError>}
             {showModal && (

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import Wrapper from '../../shared/components/Wrapper/Wrapper';
 import Form from '../../shared/components/Form/Form';
@@ -17,7 +17,15 @@ const DiscountForm = () => {
     const [error, setError] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
-    const submitForm = async payload => {
+    const toggleModal = useCallback(() => {
+        setShowModal(prev => !prev);
+    }, []);
+
+    const closeModal = useCallback(() => {
+        toggleModal();
+    }, [toggleModal]);
+
+    const submitForm = useCallback((async payload => {
         setLoading(true)
         const { error } = await saleSendApi(payload);
         setLoading(false);
@@ -25,15 +33,7 @@ const DiscountForm = () => {
             return setError(error.message);
         }
         toggleModal();
-    }
-
-    const closeModal = () => {
-        toggleModal();
-    };
-
-    const toggleModal = () => {
-        setShowModal((prevState) => !prevState);
-    };
+    }), [toggleModal]);
 
     return (
         <Wrapper>

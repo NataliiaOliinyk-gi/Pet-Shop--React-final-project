@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, memo } from 'react';
 import { useForm } from 'react-hook-form';
 
 import TextField from '../../../shared/components/TextField/TextField';
@@ -13,11 +13,11 @@ const Form = ({ submitForm, variant = 'default', text, activeText }) => {
     const [submitted, setSubmitted] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    const onSubmit = values => {
+    const onSubmit = useCallback((values => {
         submitForm(values);
         setSubmitted(true);
         reset();
-    }
+    }), [submitForm, reset]);
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -49,10 +49,10 @@ const Form = ({ submitForm, variant = 'default', text, activeText }) => {
                     width="100%"
                     variant={variant}
                     isSubmittedSuccessfully={submitted}
-                    />
+                />
             </div>
         </form>
     )
 };
 
-export default Form;
+export default memo(Form);

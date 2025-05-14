@@ -67,6 +67,10 @@ const SingleProduct = () => {
         dispatch(addToCart(payload));
     }), [dispatch]);
 
+    const handleClick = useCallback(() => {
+        onAddProductToCart({ ...product, count });
+    }, [product, count, onAddProductToCart]);
+
     const onPlus = useCallback((() => {
         setCount(prev => prev + 1)
     }), [setCount]);
@@ -123,7 +127,7 @@ const SingleProduct = () => {
                                         text="Add to cart"
                                         activeText="Added"
                                         width="100%"
-                                        onClick={() => onAddProductToCart({ ...product, count })}
+                                        onClick={handleClick}
                                     />
                                 </div>
                             </div>

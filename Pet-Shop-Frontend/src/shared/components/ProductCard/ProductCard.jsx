@@ -21,6 +21,10 @@ const ProductCard = ({ item }) => {
         dispatch(addToCart(payload));
     }), [dispatch]);
 
+    const handleClick = useCallback(() => {
+        onAddProductToCart(item);
+    }, [item, onAddProductToCart]);
+
     return (
         <li className={styles.card}>
             <div className={styles.imageBox}>
@@ -40,7 +44,8 @@ const ProductCard = ({ item }) => {
                     text="Add to cart"
                     activeText="Added"
                     width="100%"
-                    onClick={() => onAddProductToCart(item)} />
+                    onClick={handleClick}
+                />
             </div>
             {item.discont_price &&
                 <div className={styles.discountBadgeBox}>

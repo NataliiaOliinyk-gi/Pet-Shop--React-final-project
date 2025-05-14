@@ -1,4 +1,4 @@
-
+import { memo } from 'react';
 import MinusIcon from '../Icons/MinusIcon';
 import PlusIcon from '../Icons/PlusIcon';
 
@@ -19,4 +19,4 @@ const Counter = ({ plus, minus, count }) => {
     )
 };
 
-export default Counter;
+export default memo(Counter);

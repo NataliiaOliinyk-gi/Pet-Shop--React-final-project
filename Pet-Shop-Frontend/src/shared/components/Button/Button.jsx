@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import styles from './Button.module.css';
 
 const Button = ({
@@ -19,7 +19,7 @@ const Button = ({
         if (type !== 'submit') {
             setIsActive(true);
         }
-    };
+    }
 
     const handleMouseUp = () => {
         if (type !== 'submit') {
@@ -32,7 +32,7 @@ const Button = ({
         if (isActive && activeText) return activeText;
         return text;
     };
-
+    
     return (
 
         <button
@@ -48,4 +48,4 @@ const Button = ({
     );
 };
 
-export default Button;
+export default memo(Button);
