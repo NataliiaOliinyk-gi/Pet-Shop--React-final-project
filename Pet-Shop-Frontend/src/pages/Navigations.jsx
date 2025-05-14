@@ -10,11 +10,13 @@ import NotFoundPage from './NotFoundPage/NotFoundPage';
 import SingleCategoriePage from './SingleCategoriePage/SingleCategoriePage';
 import ProductPage from './ProductPage/ProductPage';
 
+import ScrollToTop from './ScrollToTop';
 
 const Navigations = () => {
 
     return (
         <>
+            <ScrollToTop />
             <Routes>
                 <Route path='/' element={<MainPage />} />
                 <Route path='/categories' element={<CategoriesPage />} />
