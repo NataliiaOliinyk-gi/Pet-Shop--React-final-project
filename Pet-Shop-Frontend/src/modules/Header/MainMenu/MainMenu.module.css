@@ -1,8 +1,20 @@
+.menuWrapper {
+    position: relative;
+}
+
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32rem;
+}
+
+.burgerBtn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--main-text-color);
 }
 
 .link {
@@ -11,6 +23,7 @@
     font-weight: 500;
     line-height: 130%;
     color: var(--main-text-color);
+    white-space: nowrap;
 }
 
 .link:hover {
@@ -39,9 +52,32 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 432px) {
 
-    .link {
-        font-size: 14rem;
+    .menu {
+        position: absolute;
+        top: -17rem;
+        right: -150rem;
+        width: 180rem;
+        background-color: white;
+        flex-direction: column;
+        gap: 20rem;
+        padding: 40rem 30rem;
+        display: none;
+        box-shadow: 0 0 10rem rgba(0, 0, 0, 0.1);
+        border-radius: 8rem;
+        z-index: 1000;
+    }
+
+    .open {
+        display: flex;
+    }
+
+    .burgerBtn {
+        display: block;
+        position: absolute;
+        top: -15rem;
+        right: -150rem;
+        z-index: 1001;
     }
 }
