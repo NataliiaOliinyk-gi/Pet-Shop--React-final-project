@@ -1,6 +1,7 @@
 import { useId } from 'react';
 
-import useProductsFilters from '../../../hooks/useProductsFilters';
+// import useProductsFetch from '../../../hooks/useProductsFetch';
+import useFilters from '../../../hooks/useFilters';
 
 import styles from './FilterDiscounted.module.css';
 import shared from '../../../styles/modules/sharedFilters.module.css';
@@ -8,13 +9,13 @@ import shared from '../../../styles/modules/sharedFilters.module.css';
 const FilterDiscounted = () => {
     const checkId = useId();
 
-    const { searchParams, setSearchParams, discount } = useProductsFilters();
+    const { searchParams, setSearchParams, discont } = useFilters();
 
     const handleChange = () => {
-        if (discount) {
-            searchParams.delete("discount");
+        if (discont) {
+            searchParams.delete("discont");
         } else {
-            searchParams.set("discount", "true");
+            searchParams.set("discont", "true");
         }
         setSearchParams(searchParams);
     };
@@ -26,7 +27,7 @@ const FilterDiscounted = () => {
                 <input
                     type="checkbox"
                     id={checkId}
-                    checked={discount}
+                    checked={discont}
                     onChange={handleChange}
                     className={styles.checkboxInput}
                 />

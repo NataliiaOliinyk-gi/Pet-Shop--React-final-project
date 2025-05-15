@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-import useProductsFilters from "../../../hooks/useProductsFilters";
+import useFilters from "../../../hooks/useFilters";
 
 import styles from './FilterPrice.module.css';
 import shared from '../../../styles/modules/sharedFilters.module.css';
@@ -10,7 +10,7 @@ const FilterPrice = () => {
     const fromId = useId();
     const toId = useId();
 
-    const { searchParams, setSearchParams, priceFrom, priceTo } = useProductsFilters();
+    const { searchParams, setSearchParams, priceFrom, priceTo } = useFilters();
 
     const handleChange = (event) => {
         const { name, value } = event.target;

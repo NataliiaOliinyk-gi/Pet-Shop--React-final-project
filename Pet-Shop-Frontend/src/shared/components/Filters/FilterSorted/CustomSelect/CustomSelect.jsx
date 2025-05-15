@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import useProductsFilters from '../../../../hooks/useProductsFilters';
+// import useProductsFetch from '../../../../hooks/useProductsFetch';
+import useFilters from '../../../../hooks/useFilters';
 
 import optionsSorted from './options';
 
@@ -11,7 +12,8 @@ const CustomSelect = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setselected] = useState(optionsSorted[0]);
 
-    const { searchParams, setSearchParams, sort } = useProductsFilters();
+    // const { searchParams, setSearchParams, sort } = useProductsFetch();
+    const { searchParams, setSearchParams, sort } = useFilters();
 
     useEffect(() => {
         if (sort) {

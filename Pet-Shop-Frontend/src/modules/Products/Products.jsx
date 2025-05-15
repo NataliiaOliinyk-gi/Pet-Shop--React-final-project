@@ -5,24 +5,15 @@ import Loader from '../../shared/components/Loader/Loader';
 import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
-import useFetch from '../../shared/hooks/useFetch';
-import useProductsFilters from "../../shared/hooks/useProductsFilters";
-
-import { getProductsAll } from '../../shared/api/products-api';
+import useProductsFetch from '../../shared/hooks/useProductsFetch';
 
 import styles from './Products.module.css';
 
 const Products = () => {
 
-    const { data: products, loading, error } = useFetch({
-        request: getProductsAll,
-        initialData: [],
-    });
+    const { products, loading, error } = useProductsFetch()
 
-    const { getFilteredProducts } = useProductsFilters();
-    const filteredProducts = getFilteredProducts(products);
-
-    const elements = filteredProducts.map(item => (
+    const elements = products.map(item => (
         <ProductCard key={item.id} item={item} />
     ));
 

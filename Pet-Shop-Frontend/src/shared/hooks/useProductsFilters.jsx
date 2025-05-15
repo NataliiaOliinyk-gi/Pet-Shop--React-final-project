@@ -7,7 +7,7 @@ const useProductsFilters = () => {
 
     const priceFrom = parseFloat(searchParams.get("priceFrom"));
     const priceTo = parseFloat(searchParams.get("priceTo"));
-    const discount = searchParams.get("discount") === "true";
+    const discount = searchParams.get("discont") === "true";
     const sort = searchParams.get("sort");
 
     const getFilteredProducts = (data) => {

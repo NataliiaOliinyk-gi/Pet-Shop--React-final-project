@@ -8,10 +8,11 @@ import LoadingError from '../../shared/components/LoadingError/LoadingError';
 import Filters from '../../shared/components/Filters/Filters';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 
-import useFetch from '../../shared/hooks/useFetch';
-import useProductsFilters from '../../shared/hooks/useProductsFilters';
+// import useFetch from '../../shared/hooks/useFetch';
+// import useProductsFilters from '../../shared/hooks/useProductsFilters';
+import useCategoriesFetch from '../../shared/hooks/useCategoriesFetch';
 
-import { getCategorieById } from '../../shared/api/categories-api';
+// import { getCategorieById } from '../../shared/api/categories-api';
 import { selectCategoriesAll } from '../../redux/categories/categories-selectors';
 import { slugify } from '../../shared/utils/slugify';
 
@@ -23,23 +24,19 @@ const SingleCategorie = () => {
     const { id: slug } = useParams();
     const navigate = useNavigate();
 
-    const { getFilteredProducts } = useProductsFilters();
+    // const { getFilteredProducts } = useProductsFilters();
 
     const categoryItem = categories.find(
         item => slugify(item.title) === slug.toLowerCase()
     );
+    
+     const { categorie: categoryData, loading, error, searchParams } = useCategoriesFetch(categoryItem?.id);
 
-    // Хук useCallback ЗАВЖДИ викликається
-    const request = useCallback(() => {
-        if (!categoryItem?.id) return Promise.resolve({ category: {}, data: [] });
-        return getCategorieById(categoryItem.id);
-    }, [categoryItem?.id]);
-
-    // useFetch ЗАВЖДИ викликається
-    const { data: categoryData, loading, error } = useFetch({
-        request,
-        initialData: { category: {}, data: [] },
-    });
+    //  console.log(categoryData);
+    //  console.log(searchParams);
+     
+     
+ 
 
     useEffect(() => {
         if (!categoriesLoading && categories.length && !categoryItem) {
@@ -54,9 +51,9 @@ const SingleCategorie = () => {
     const categorie = categoryData?.category?.title || '';
     const productsCategory = categoryData?.products || [];
 
-    const filteredProducts = getFilteredProducts(productsCategory);
+    // const filteredProducts = getFilteredProducts(productsCategory);
 
-    const elements = filteredProducts.map(item => (
+    const elements = productsCategory.map(item => (
         <ProductCard key={item.id} item={item} />
     ));
 
@@ -80,3 +77,17 @@ const SingleCategorie = () => {
 };
 
 export default SingleCategorie;
+
+
+   
+    // Хук useCallback ЗАВЖДИ викликається
+    // const request = useCallback(() => {
+    //     if (!categoryItem?.id) return Promise.resolve({ category: {}, data: [] });
+    //     return getCategorieById(categoryItem.id);
+    // }, [categoryItem?.id]);
+
+    // useFetch ЗАВЖДИ викликається
+    // const { data: categoryData, loading, error } = useFetch({
+    //     request,
+    //     initialData: { category: {}, data: [] },
+    // });
