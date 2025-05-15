@@ -1,6 +1,10 @@
 .card {
     position: relative;
-    width: 316px;
+    /* width: 316px; */
+    width: 100%;
+    max-width: 316px;
+    
+
     border: 1px solid var(--light-color);
     border-radius: 12px;
     display: flex;
@@ -75,4 +79,23 @@
 .card:hover .addToCartBtnBox {
     opacity: 1;
     visibility: visible;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .card {
+       margin: 0 auto;
+    }
+}
+  
+
+@media screen and (max-width: 768px) {
+
+    .card {
+        max-width: 316rem;
+    }
+
+    .imageBox {
+        height: 284rem;
+    }
 }

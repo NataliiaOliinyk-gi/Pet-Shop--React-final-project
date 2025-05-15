@@ -1,18 +1,21 @@
 .container {
     width: 100%;
-    margin: 66rem 0 0 40rem;
+    max-width: 1440rem;
+    margin-top: 66rem;
+    padding-left: 40rem;
+    padding-right: 5rem;
 }
 
 .discountFormContainer {
     background: linear-gradient(220deg, var(--gradient-left) 0%, var(--gradient-right) 100%);
     border-radius: 12px;
-    padding: 32rem 32rem 0 32rem;
+    padding-top: 32rem;
     width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 24rem;
 }
 
 .title {
@@ -26,16 +29,103 @@
 .formContainer {
     width: 100%;
     display: flex;
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
 .images {
     background-image: url("../../assets/images/discount.png");
-    width: 783rem;
-    height: 360rem;
+    width: 90%;
+    height: auto;
+    max-width: 783rem;
+    aspect-ratio: 783 / 360;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 1 1 300rem;
 }
 
 .formBox {
     padding: 32rem;
-    flex: 1;
+    max-width: 548rem;
+    flex: 1 1 300rem;
+}
+
+@media screen and (max-width: 1180px) {
+
+    .title {
+        font-size: 58rem;
+    }
+
+    .discountFormContainer {
+        gap: 18rem;
+    }
+
+    .formBox {
+        padding: 28rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .title {
+        font-size: 50rem;
+    }
+
+    .discountFormContainer {
+        gap: 10px;
+    }
+
+    .formBox {
+        padding: 28rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        font-size: 44rem;
+    }
+
+    .formBox {
+        max-width: 430rem;
+    }
+}
+
+@media screen and (max-width: 667px) {
+
+    .title {
+        font-size: 40rem;
+    }
+
+    .discountFormContainer {
+        gap: 18rem;
+    }
+
+    .formContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formBox {
+        max-width: 548px;
+        width: 100%;
+        flex: none;
+        order: 1;
+    }
+
+    .images {
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .title {
+        font-size: 32rem;
+    }
+
+    .images {
+        display: none;
+    }
 }

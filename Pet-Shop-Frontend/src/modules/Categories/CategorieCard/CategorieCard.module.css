@@ -28,3 +28,11 @@
 .title:hover {
     color: var(--second-text-color);
 }
+
+@media screen and (max-width: 768px) {
+
+    .imageBox {
+        width: 316rem;
+        height: 350rem;
+    }
+}

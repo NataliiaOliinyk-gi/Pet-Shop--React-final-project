@@ -195,3 +195,9 @@
         height: 30rem;
     }
 }
+
+@media screen and (max-width: 390px) {
+    .box {
+        gap: 20rem;
+    }
+}

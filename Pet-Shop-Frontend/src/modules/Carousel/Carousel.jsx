@@ -61,7 +61,7 @@ const Carousel = ({ data, loading, error, to, name }) => {
                         slidesPerView: 3,
                         spaceBetween: 32,
                     },
-                    667: {
+                    560: {
                         slidesPerView: 2,
                         spaceBetween: 24,
                     },
