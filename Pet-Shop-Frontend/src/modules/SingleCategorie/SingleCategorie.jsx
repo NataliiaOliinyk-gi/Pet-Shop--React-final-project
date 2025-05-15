@@ -52,7 +52,7 @@ const SingleCategorie = () => {
     }
 
     const categorie = categoryData?.category?.title || '';
-    const productsCategory = categoryData?.data || [];
+    const productsCategory = categoryData?.products || [];
 
     const filteredProducts = getFilteredProducts(productsCategory);
 

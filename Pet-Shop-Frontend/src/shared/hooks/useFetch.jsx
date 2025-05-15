@@ -15,7 +15,7 @@ const useFetch = ({ request, initialData }) => {
             if (error) {
                 return setError(error.message);
             }
-            setData(data);
+            setData(data.data);
         };
 
         fetchData();

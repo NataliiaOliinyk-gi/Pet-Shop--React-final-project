@@ -43,7 +43,7 @@ const SingleProduct = () => {
                 if (errorProductsAll) {
                     return setError(errorProductsAll.message);
                 }
-                const producItem = productsAll.find(
+                const producItem = productsAll.data.find(
                     item => slugify(item.title) === slug.toLowerCase()
                 );
                 if (!producItem) {
