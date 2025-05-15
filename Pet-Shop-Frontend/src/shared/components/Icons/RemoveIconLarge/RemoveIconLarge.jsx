@@ -1,8 +1,10 @@
+import styles from './RemoveIconLarge.module.css'
+
 const RemoveIconLarge = (props) => (
   <svg
+    className={styles.removeIcon}
     xmlns="http://www.w3.org/2000/svg"
-    width={44}
-    height={44}
+    viewBox="0 0 44 44"
     fill="none"
     {...props}
   >

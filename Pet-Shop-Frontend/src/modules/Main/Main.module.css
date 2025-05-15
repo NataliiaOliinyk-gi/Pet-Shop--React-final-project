@@ -1,5 +1,12 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 40rem;
+}
+
+@media screen and (max-width: 432px) {
+
+    .container {
+        gap: 20rem;
+    }
 }

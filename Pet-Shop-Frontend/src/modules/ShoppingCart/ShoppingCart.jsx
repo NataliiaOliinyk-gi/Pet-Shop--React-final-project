@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useLocation } from 'react-router-dom';
 
 import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
 import ModuleTitle from '../../shared/components/ModuleTitle/ModuleTitle';
@@ -15,8 +14,7 @@ import { increaseCountInCart, decreaseCountInCart, deleteFromCart } from '../../
 import styles from './ShoppingCart.module.css';
 
 const ShoppingCart = () => {
-    // const location = useLocation();
-    
+
     const items = useSelector(selectCart);
     const dispatch = useDispatch();
 

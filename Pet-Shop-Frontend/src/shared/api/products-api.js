@@ -11,11 +11,3 @@ export const getProductsAll = requestDecorator(async () => {
     const { data } = await backendInstance.get("/products/all");
     return data;
 });
-
-
-// export const getProductsAll = requestDecorator(async (params = {}) => {
-//     const { data } = await productsInstance.get("/all", {
-//         params,
-//     });
-//     return data;
-// });

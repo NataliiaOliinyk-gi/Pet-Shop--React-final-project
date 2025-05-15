@@ -3,7 +3,7 @@
   height: 24rem;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 432px) {
   .removeIcon {
     width: 20rem;
     height: 20rem;

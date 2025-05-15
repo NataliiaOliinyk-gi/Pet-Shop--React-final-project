@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-import RemoveIconLarge from "../Icons/RemoveIconLarge";
+import RemoveIconLarge from "../Icons/RemoveIconLarge/RemoveIconLarge";
 
 import styles from './Modal.module.css';
 

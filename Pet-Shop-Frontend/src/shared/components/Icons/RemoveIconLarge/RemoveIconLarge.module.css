@@ -1,0 +1,18 @@
+.removeIcon {
+    width: 44rem;
+    height: 44rem;
+}
+
+@media screen and (max-width: 768px) {
+    .removeIcon {
+        width: 34rem;
+        height: 34rem;
+    }
+}
+
+@media screen and (max-width: 432px) {
+    .removeIcon {
+        width: 24rem;
+        height: 24rem;
+    }
+}

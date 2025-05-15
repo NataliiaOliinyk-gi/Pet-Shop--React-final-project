@@ -1,10 +1,7 @@
 .card {
     position: relative;
-    /* width: 316px; */
     width: 100%;
     max-width: 316px;
-    
-
     border: 1px solid var(--light-color);
     border-radius: 12px;
     display: flex;
@@ -70,7 +67,8 @@
     position: absolute;
     top: 210px;
     left: 16px;
-    width: 284px;
+    width: 100%;
+    max-width: 284px;
     opacity: 0;
     visibility: hidden;
 }
@@ -84,15 +82,20 @@
 @media screen and (max-width: 1024px) {
 
     .card {
-       margin: 0 auto;
+        margin: 0 auto;
     }
 }
-  
 
 @media screen and (max-width: 768px) {
 
     .card {
         max-width: 316rem;
+    }
+
+    .addToCartBtnBox {
+        max-width: 284rem;
+        top: 210rem;
+        left: 16rem;
     }
 
     .imageBox {

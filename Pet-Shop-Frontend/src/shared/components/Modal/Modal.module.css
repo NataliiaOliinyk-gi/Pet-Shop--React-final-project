@@ -49,3 +49,21 @@
     flex-direction: column;
     gap: 20rem;
 }
+
+@media screen and (max-width: 768px) {
+
+    .modalContainer {
+        width: 450rem;
+        gap: 14rem;
+        padding: 28rem;
+    }
+
+    .title {
+        font-size: 30rem;
+    }
+
+    .text {
+        font-size: 18rem;
+    }
+
+}
