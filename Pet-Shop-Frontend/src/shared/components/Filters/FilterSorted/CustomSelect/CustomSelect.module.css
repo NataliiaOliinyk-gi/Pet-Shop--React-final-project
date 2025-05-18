@@ -66,10 +66,14 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 432px) {
 
     .selectButton {
-        height: 36rem;
-        gap: 12rem;
+        font-size: 14px;
+    }
+
+    .dropdown {
+        height: 124px;
+        gap: 8px;
     }
 }

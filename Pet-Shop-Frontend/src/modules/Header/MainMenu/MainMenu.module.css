@@ -56,13 +56,13 @@
 
     .menu {
         position: absolute;
-        top: -17rem;
-        right: -150rem;
-        width: 180rem;
+        top: -50rem;
+        left: -50rem;
+        width: 400rem;
         background-color: white;
         flex-direction: column;
-        gap: 20rem;
-        padding: 40rem 30rem;
+        gap: 30rem;
+        padding: 60rem 30rem;
         display: none;
         box-shadow: 0 0 10rem rgba(0, 0, 0, 0.1);
         border-radius: 8rem;
@@ -76,8 +76,11 @@
     .burgerBtn {
         display: block;
         position: absolute;
-        top: -15rem;
-        right: -150rem;
+        top: -17rem;
         z-index: 1001;
+    }
+
+    .link {
+        font-size: 18px;
     }
 }

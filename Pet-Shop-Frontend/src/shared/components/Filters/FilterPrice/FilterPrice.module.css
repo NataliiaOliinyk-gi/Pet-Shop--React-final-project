@@ -14,7 +14,7 @@
     transition: ease-in-out 500ms;
 }
 
-.field:hover{
+.field:hover {
     background-color: var(--hover-background-color);
 }
 
@@ -29,6 +29,10 @@
 @media screen and (max-width: 768px) {
 
     .field {
-        height: 36rem;
+        height: 36px;
+    }
+
+    .field::placeholder {
+        font-size: 14px;
     }
 }

@@ -15,9 +15,23 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 432px) {
 
     .nav {
         padding: 20rem 30rem;
+    }
+
+    .menu {
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        margin-left: 70rem;
+        margin-right: auto;
+    }
+
+    .cart {
+        order: 3;
     }
 }
