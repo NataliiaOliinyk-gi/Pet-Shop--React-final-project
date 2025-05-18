@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { useSearchParams } from "react-router-dom";
 import useFilters from "./useFilters";
 
 import { getCategorieByIdApi } from "../api/categories-api";
@@ -12,26 +11,24 @@ const useCategoriesFetch = (categoryId) => {
 
     const { searchParams, setSearchParams, priceFrom, priceTo, sort, discont } = useFilters();
 
-    // const [searchParams, setSearchParams] = useSearchParams();
-
-    // const priceFrom = parseFloat(searchParams.get("priceFrom"));
-    // const priceTo = parseFloat(searchParams.get("priceTo"));
-    // const discont = searchParams.get("discont") === "true";
-    // const sort = searchParams.get("sort");
-
-    const queryParams = {
-        priceFrom,
-        priceTo,
-        sort,
-    };
-
     useEffect(() => {
         if (!categoryId) return;
 
         const fetchProducts = async () => {
             setLoading(true)
             setError(null);
-            const { data, error } = await getCategorieByIdApi(categoryId, queryParams);
+            console.log(priceFrom, priceTo, discont, sort);
+
+            const cleanParams = {};
+            if (!isNaN(priceFrom)) cleanParams.priceFrom = priceFrom;
+            if (!isNaN(priceTo)) cleanParams.priceTo = priceTo;
+            if (sort) cleanParams.sort = sort;
+            if (searchParams.has("discont")) cleanParams.discont = discont;
+
+            console.log("Params for API:", cleanParams);
+
+            const { data, error } = await getCategorieByIdApi(categoryId, cleanParams);
+
             setLoading(false);
             if (error) {
                 setError(error.message);
@@ -41,8 +38,7 @@ const useCategoriesFetch = (categoryId) => {
         };
 
         fetchProducts();
-    }, [priceFrom, priceTo, discont, sort, categoryId])
-
+    }, [priceFrom, priceTo, discont, sort, categoryId, searchParams])
 
     return {
         categorie,

@@ -1,7 +1,7 @@
 const requestDecorator = requestFunction => {
-    return async (payload) => {
+    return async (...payload) => {
         try {
-            const data = await requestFunction(payload)
+            const data = await requestFunction(...payload)
             return { data };
         }
         catch (error) {

@@ -10,7 +10,7 @@ import Counter from '../../shared/components/Counter/Counter';
 import Button from '../../shared/components/Button/Button';
 import PriceBox from '../../shared/components/PriceBox/PriceBox';
 
-import { getProductsAll, getProductById } from '../../shared/api/products-api';
+import { getProductByIdApi, getProductsAllApi } from '../../shared/api/products-api';
 import { localUrl } from '../../shared/api/backendInstance';
 import { slugify } from '../../shared/utils/slugify'
 import { addToCart } from '../../redux/cart/cart-slice';
@@ -39,7 +39,8 @@ const SingleProduct = () => {
             try {
                 setLoading(true);
 
-                const { data: productsAll, error: errorProductsAll } = await getProductsAll();
+                const { data: productsAll, error: errorProductsAll } = await getProductsAllApi();
+
                 if (errorProductsAll) {
                     return setError(errorProductsAll.message);
                 }
@@ -52,7 +53,7 @@ const SingleProduct = () => {
                 }
 
                 // Отримуємо товар по id
-                const { data: productData, error: errorProduct } = await getProductById(producItem.id);
+                const { data: productData, error: errorProduct } = await getProductByIdApi(producItem.id);
                 if (errorProduct) {
                     return setError(errorProduct.message);
                 }
