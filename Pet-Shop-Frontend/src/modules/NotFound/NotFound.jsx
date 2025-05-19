@@ -4,6 +4,9 @@ import SectionLayout from '../../shared/components/SectionLayout/SectionLayout';
 import Title from '../../shared/components/Title/Title';
 import Button from '../../shared/components/Button/Button';
 
+import fourSvg from '../../assets/svg/4.svg';
+import petsImage from '../../assets/images/pets.png';
+
 import styles from './NotFound.module.css';
 
 const NotFound = () => {
@@ -21,9 +24,9 @@ const NotFound = () => {
 
                 <div className={styles.container}>
                     <div className={styles.boxImage}>
-                        <img className={styles.img4} src="../../src/assets/svg/4.svg" alt="4" />
-                        <img className={styles.imgPets} src="../../src/assets/images/pets.png" alt="Pets" />
-                        <img className={styles.img4} src="../../src/assets/svg/4.svg" alt="4" />
+                        <img className={styles.img4} src={fourSvg} alt="4" />
+                        <img className={styles.imgPets} src={petsImage} alt="Pets" />
+                        <img className={styles.img4} src={fourSvg} alt="4" />
                     </div>
                     <div className={styles.boxDescription}>
                         <Title className={styles.title} text='Page Not Found' />
