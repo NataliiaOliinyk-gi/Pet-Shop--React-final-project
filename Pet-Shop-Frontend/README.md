@@ -50,6 +50,8 @@ Dieses Projekt ist das Abschlussprojekt des Frontend-Kurses und wurde mit React 
 
 Projekt von Nataliia Oliinyk
 
+#
+
 # Front-end React Final Project
 
 ## Интернет-магазин товаров для домашних животных
