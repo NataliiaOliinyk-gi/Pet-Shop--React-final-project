@@ -98,6 +98,6 @@ Projekt von Nataliia Oliinyk
 
 [Макет приложения](https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0)
 
-## Автор
+## Autor
 
 Project by Nataliia Oliinyk
