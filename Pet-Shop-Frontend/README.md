@@ -46,7 +46,7 @@ Dieses Projekt ist das Abschlussprojekt des Frontend-Kurses und wurde mit React 
 
 [Figma-Design](https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0)
 
-## Автор
+## Autor
 
 Projekt von Nataliia Oliinyk
 
@@ -98,6 +98,6 @@ Projekt von Nataliia Oliinyk
 
 [Макет приложения](https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0)
 
-## Autor
+## Автор
 
 Project by Nataliia Oliinyk
