@@ -1,3 +1,55 @@
+# React Abschlussprojekt des Frontend-Kurses
+
+## Online-Shop für Heimtierbedarf
+
+Dieses Projekt ist das Abschlussprojekt des Frontend-Kurses und wurde mit React und modernen Webtechnologien umgesetzt. Ziel war es, eine responsive und benutzerfreundliche Webanwendung für einen Online-Shop zu entwickeln.
+
+## Funktionalität
+
+- Startseite mit Promo-Sektion und Kategorienübersicht.
+
+- Seiten für einzelne Kategorien, reduzierte Artikel und alle Produkte.
+
+- Detaillierte Produktseite mit Beschreibung und Kaufoption.
+
+- Warenkorb mit Bearbeitungs- und Bestellmöglichkeiten.
+
+- Formular zur Bestellung und zur Einlösung eines Rabattcodes.
+
+- Responsives Layout für verschiedene Bildschirmgrößen.
+
+- Fehlerbehandlung mit einer eigenen 404-Seite.
+
+## Tech Stack
+
+- **Frontend:** React, Redux Toolkit, React Router Dom, Axios, React Hook Form
+
+- **Styling:** CSS Modules
+
+- **Backend:** Node.js, Express, SQLite, Sequelize
+
+[Backend-Repository](https://github.com/NataliiaOliinyk-gi/pet-shop-backend)
+
+## Projektziele
+
+- Entwicklung einer modernen SPA mit Client-Side-Routing.
+
+- Integration mit einem REST API Backend.
+
+- State Management mit Redux Toolkit.
+
+- Reaktionsfähiges Design für ein gutes Benutzererlebnis.
+
+- Formularvalidierung und Fehlerbehandlung.
+
+## Designvorlage (Figma)
+
+[Figma-Design](https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0)
+
+## Автор
+
+Projekt von Nataliia Oliinyk
+
 # Front-end React Final Project
 
 ## Интернет-магазин товаров для домашних животных
@@ -28,7 +80,7 @@
 
 - **Backend:** Node.js, Express, SQLite, Sequelize
 
-Репозиторий Backend[https://github.com/NataliiaOliinyk-gi/pet-shop-backend]
+[Репозиторий Backend](https://github.com/NataliiaOliinyk-gi/pet-shop-backend)
 
 ## Цели проекта
 
@@ -44,7 +96,7 @@
 
 ## Макет в Figma
 
-Макет приложения[https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0]
+[Макет приложения](https://www.figma.com/design/8iptQGgZnHpFaKcMErrkmc/Front-end-React-project--Copy---Copy-?node-id=0-1&p=f&t=CBJ0LkMDSxtrJfaz-0)
 
 ## Автор
 
